@@ -1,2 +1,3 @@
-# Design Circle Prototype
-A static prototype for the Design Circle website
+# Design Circle Website
+
+A site for the Design Circle club's website
