@@ -1,0 +1,261 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Century Gothic;
+  min-height: 100%;
+}
+
+
+.dc-green-background {
+  background: #49A447;
+}
+
+.dc-green-foreground {
+  color: #49A447;
+}
+
+.main-nav {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  bottom: 0;
+	text-align: center;
+}
+
+.main-nav .vertically-centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.main-nav .vertically-centered ul {
+  list-style-type: none;
+  max-height: 100%;
+  display: inline;
+}
+
+.main-nav .vertically-centered .brand_image {
+  margin-left: 100px;
+}
+
+.main-nav .vertically-centered ul li {
+  padding: 0 40px;
+  max-height: 100%;
+  display: inline;
+}
+
+.main-nav .vertically-centered ul li a {
+  color: white;
+  font-weight: lighter;
+  font-size: 1.5em;
+}
+
+.brand_image {
+  max-height: 50px;
+  display: inline;
+}
+
+.section
+{
+    width: 100%;
+    padding: 0px 0 150px 0;
+
+    background-color: white;
+    display: table;
+}
+
+.content-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.content
+{
+    width: 600px;
+    margin: 0 auto 0 auto;
+
+    background-color: white;
+}
+
+.inline
+{
+    display: inline-block;
+}
+
+.memberPhoto
+{
+    width: 135px;
+    height: 150px;
+    margin: 5px;
+}
+
+.memberInfo
+{
+    font-size: .9em;
+    margin-bottom: 10px;
+    padding: 2px 0 0 5px;
+}
+
+.Content
+{
+    margin-top: 15px;
+    max-width: 650px;
+}
+
+.eventInfo
+{
+    font-size: 1em;
+    line-height: 19px;
+    width: 50%;
+    height: 175px;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.blogInfo {
+  max-width: 275px;
+  font-size: 1em;
+  line-height: 19px;
+
+  height: 200px;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+h1
+{
+    font-size: 80px;
+    font-weight: lighter;
+    line-height: 65px;
+
+    margin: 10px 0 10px 0;
+    padding: 0;
+
+    color: #49a447;
+}
+
+a
+{
+    text-decoration: none;
+
+    color: #49a447;
+}
+
+a:hover
+{
+    color: darkgreen;
+}
+
+div.b-link
+{
+    margin: 50px 0 0 0;
+    text-align: right;
+}
+
+a.b-link
+{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+a.s-link
+{
+    font-size: 1.2em;
+
+}
+
+div.section {
+  min-height: 100%;
+}
+
+.contactFormContainer, .contactFormImage {
+  vertical-align: top;
+}
+
+.contactFormContainer {
+  width: 60%;
+  font-size: .9em;
+}
+
+.contactFormImage {
+  width: 39%;
+}
+
+label {
+  font-size: 1em;
+  font-weight: lighter;
+  margin-top: 5px;
+
+}
+
+input, textarea {
+  border: #49a447 1px solid;
+}
+
+textarea#contactMessage {
+  width: 90%;
+  height: 90px;
+}
+
+input#contactFullName, input#contactAffiliation, input#contactEmail {
+  width: 70%;
+  height: 20px;
+
+}
+
+input#contactFormSubmit {
+  background-color: white;
+}
+
+#events {
+	height: 100%;
+}
+
+#events h1, #events a {
+	color: #59A447;
+}
+
+#events h1 {
+	font-size: 5em;
+}
+
+#events a {
+	font-size: 1.5em;
+}
+
+#events img {
+	width: 100%;
+}
+
+.ex1 {
+        margin-top:150px;
+	color:#49a447;
+	font-size:6em;
+}
+
+.exAboutTop{
+        margin-top:100px;
+	color:#49a447;
+	font-size:6em;
+}
+
+.exAboutBody {
+        margin-bottom:100px;
+	font-size:1.1em;
+}
+.ex2 {
+        background-image:url(/img/cat2.jpg);
+        background-repeat:no-repeat;
+        background-color:white;
+        background-size:2000px 800px;
+        margin-bottom:100px;
+}
+
+.Margin {
+        margin-top:250px;
+}
+
