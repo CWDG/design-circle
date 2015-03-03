@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow: auto;
 }
 
 body {
@@ -87,6 +88,11 @@ body {
   margin: 5px;
 }
 
+.event-tiles.tile-container .tile {
+  /* Why are there 4 missing pixels!? */
+  width: 290px;
+}
+
 .memberPhoto {
   width: 135px;
   height: 150px;
@@ -103,20 +109,24 @@ body {
   max-width: 650px;
 }
 
+.eventsPhoto {
+  width: 100%;
+}
+
 .eventInfo {
   font-size: 1em;
   line-height: 19px;
-  width: 50%;
-  height: 175px;
+
+  /* width: 50%; */
   padding-top: 10px;
   overflow: hidden;
 }
 
 .blogInfo {
-  max-width: 275px;
   font-size: 1em;
   line-height: 19px;
 
+  max-width: 275px;
   height: 200px;
   overflow: hidden;
   padding-top: 10px;
@@ -201,10 +211,11 @@ input#contactFormSubmit {
   background-color: white;
 }
 
-.ex1 {
-  margin-top:150px;
-  color:#49a447;
-  font-size:6em;
+.main-title {
+  margin-top: 150px;
+  font-size: 5em;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 
 .exAboutTop{
