@@ -9,7 +9,6 @@ body {
   min-height: 100%;
 }
 
-
 .dc-green-background {
   background: #49A447;
 }
@@ -85,7 +84,7 @@ body {
 }
 
 .tile {
-  margin: 5px;
+  padding: 5px;
 }
 
 .event-tiles.tile-container .tile {
