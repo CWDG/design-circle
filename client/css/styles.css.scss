@@ -92,15 +92,13 @@ body {
 /* Quarter-sized inlines */
 .team .inline {
   @include span-columns(3);
-  @include omega(4);
-  @include omega(8);
+  @include omega(4n);
 }
 
 /* Half-sized inlines */
 .events .inline,
 .blog .inline {
   @include span-columns(6);
-  @include omega(2);
 }
 
 /* Talk inlines */
