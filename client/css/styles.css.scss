@@ -1,3 +1,6 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
 html, body {
   margin: 0;
   padding: 0;
@@ -60,36 +63,48 @@ body {
 }
 
 .section {
-  width: 100%;
-  padding: 0px 0 150px 0;
+  @include outer-container(100%);
 
+  min-height: 100%;
+  padding-bottom: 150px;
   background-color: white;
-  display: table;
-}
-
-.content-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+  // display: table;
 }
 
 .content {
-  width: 600px;
-  margin: 0 auto 0 auto;
+  @include span-columns(6);
+  @include shift(3);
+}
 
-  background-color: white;
+.tiles-container {
+  @include row();
 }
 
 .inline {
-  display: inline-block;
+  /* Causes bullshit to happen */
+  // display: inline-block;
 }
 
-.tile {
-  padding: 5px;
+/* Quarter-sized inlines */
+.team .inline {
+  @include span-columns(3);
+  @include omega(4);
+  @include omega(8);
 }
 
-.event-tiles.tile-container .tile {
-  /* Why are there 4 missing pixels!? */
-  width: 290px;
+/* Half-sized inlines */
+.events .inline,
+.blog .inline {
+  @include span-columns(6);
+  @include omega(2);
+}
+
+/* Talk inlines */
+.talk .inline.contactFormContainer {
+  @include span-columns(8);
+}
+.talk .inline.contactFormImage {
+  @include span-columns(4);
 }
 
 .memberPhoto {
@@ -103,11 +118,6 @@ body {
   padding-top: 2px;
 }
 
-.Content {
-  margin-top: 15px;
-  max-width: 650px;
-}
-
 .eventsPhoto {
   width: 100%;
 }
@@ -116,7 +126,6 @@ body {
   font-size: 1em;
   line-height: 19px;
 
-  /* width: 50%; */
   padding-top: 10px;
   overflow: hidden;
 }
@@ -153,7 +162,7 @@ a:hover {
 }
 
 div.b-link {
-  margin: 50px 0 0 0;
+  padding-top: 50px;
   text-align: right;
 }
 
@@ -167,21 +176,12 @@ a.s-link {
 
 }
 
-div.section {
-  min-height: 100%;
-}
-
 .contactFormContainer, .contactFormImage {
   vertical-align: top;
 }
 
 .contactFormContainer {
-  width: 60%;
   font-size: .9em;
-}
-
-.contactFormImage {
-  width: 39%;
 }
 
 label {
@@ -222,15 +222,27 @@ input#contactFormSubmit {
 }
 
 .exAboutBody {
+  /* Cover 2/3 of the area */
+  @include span-columns(8);
+
   margin-bottom:100px;
   font-size:1.1em;
+}
+
+.about-pictures {
+  /* Remaining 3rd is pictures */
+  @include span-columns(4);
+
+  img {
+    margin-bottom: 20px;
+  }
 }
 
 .ex2 {
   background-image: url(/img/cat2.jpg);
   background-repeat: no-repeat;
   background-color: white;
-  background-size: cover;
+  background-size: contain;
 }
 
 .text-center {
