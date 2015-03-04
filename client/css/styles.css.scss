@@ -107,6 +107,10 @@ body {
 }
 .talk .inline.contactFormImage {
   @include span-columns(5);
+
+  img {
+    width: 100%;
+  }
 }
 
 .memberPhoto {
