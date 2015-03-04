@@ -252,14 +252,13 @@ input#contactFormSubmit {
 }
 
 .text-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  color: white;
+
+  .dc-logo {
+    height: 300px;
+  }
 }
 
-.text-center .dc-logo {
-  max-height: 100px;
-}
 
 .Margin {
   margin-top:250px;
