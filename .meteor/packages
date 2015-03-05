@@ -7,7 +7,10 @@
 meteor-platform
 autopublish
 insecure
-bootstrap
-kevohagan:sweetalert
+tanis:bootstrap-social
 jquery
 rzymek:fullcalendar
+johnantoni:meteor-font-awesome
+fourseven:scss
+bootstrap
+kevohagan:sweetalert

@@ -1,14 +1,20 @@
 $(document).ready(function() {
+    $(".section").height($(window).height());
+
     $.scrollify({
         section: ".section"
     });
+
+    $(".brand_image").click(function(){
+        $.scrollify("move", 0);
+    })
 
     $("#about-link").click(function() {
         $.scrollify("move", 1)
     });
 
     $("#events-link").click(function() {
-        $.scrollify("move", 2)
+        $.scrollify("move", 3)
     });
 
     $("#news-link").click(function() {

@@ -1,3 +1,6 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
 html, body {
   margin: 0;
   padding: 0;
@@ -7,7 +10,6 @@ body {
   font-family: Century Gothic, sans-serif;
   min-height: 100%;
 }
-
 
 .dc-green-background {
   background: #49A447;
@@ -40,6 +42,7 @@ body {
 
 .main-nav .vertically-centered .brand_image {
   margin-left: 100px;
+  cursor: pointer;
 }
 
 .main-nav .vertically-centered ul li {
@@ -52,6 +55,8 @@ body {
   color: white;
   font-weight: lighter;
   font-size: 1.5em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .social-media-button > img {
@@ -64,31 +69,54 @@ body {
 }
 
 .section {
-  width: 100%;
-  padding: 0px 0 150px 0;
+  @include outer-container(100%);
 
+  min-height: 100%;
+  padding-bottom: 150px;
   background-color: white;
-  display: table;
-}
-
-.content-wrapper {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .content {
-  width: 600px;
-  margin: 0 auto 0 auto;
+  @include span-columns(6);
+  @include shift(3);
+}
 
-  background-color: white;
+.talk .content,
+.about .content {
+  @include span-columns(7);
+}
+
+.tiles-container {
+  @include row();
 }
 
 .inline {
-  display: inline-block;
+  /* Causes bullshit to happen */
+  // display: inline-block;
 }
 
-.tile {
-  margin: 5px;
+/* Quarter-sized inlines */
+.team .inline {
+  @include span-columns(3);
+  @include omega(4n);
+}
+
+/* Half-sized inlines */
+.events .inline,
+.blog .inline {
+  @include span-columns(6);
+}
+
+/* Talk inlines */
+.talk .inline.contactFormContainer {
+  @include span-columns(7);
+}
+.talk .inline.contactFormImage {
+  @include span-columns(5);
+
+  img {
+    width: 100%;
+  }
 }
 
 .memberPhoto {
@@ -102,25 +130,23 @@ body {
   padding-top: 2px;
 }
 
-.Content {
-  margin-top: 15px;
-  max-width: 650px;
+.eventsPhoto {
+  width: 100%;
 }
 
 .eventInfo {
   font-size: 1em;
   line-height: 19px;
-  width: 50%;
-  height: 175px;
+
   padding-top: 10px;
   overflow: hidden;
 }
 
 .blogInfo {
-  max-width: 275px;
   font-size: 1em;
   line-height: 19px;
 
+  max-width: 275px;
   height: 200px;
   overflow: hidden;
   padding-top: 10px;
@@ -148,7 +174,7 @@ a:hover {
 }
 
 div.b-link {
-  margin: 50px 0 0 0;
+  padding-top: 50px;
   text-align: right;
 }
 
@@ -162,21 +188,12 @@ a.s-link {
 
 }
 
-div.section {
-  min-height: 100%;
-}
-
 .contactFormContainer, .contactFormImage {
   vertical-align: top;
 }
 
 .contactFormContainer {
-  width: 60%;
   font-size: .9em;
-}
-
-.contactFormImage {
-  width: 39%;
 }
 
 label {
@@ -205,10 +222,12 @@ input#contactFormSubmit {
   background-color: white;
 }
 
-.ex1 {
-  margin-top:150px;
-  color:#49a447;
-  font-size:6em;
+.main-title {
+  margin-top: 150px;
+  font-size: 5em;
+  line-height: 1em;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 
 .exAboutTop{
@@ -216,26 +235,37 @@ input#contactFormSubmit {
 }
 
 .exAboutBody {
+  /* Cover ~ 2/3 of the area */
+  @include span-columns(7);
+
   margin-bottom:100px;
   font-size:1.1em;
+}
+
+.about-pictures {
+  /* Cover remaining ~1/3 of the area */
+  @include span-columns(5);
+
+  img {
+    margin-bottom: 20px;
+  }
 }
 
 .ex2 {
   background-image: url(/img/cat2.jpg);
   background-repeat: no-repeat;
   background-color: white;
-  background-size: cover;
+  background-size: contain;
 }
 
 .text-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  color: white;
+
+  .dc-logo {
+    height: 300px;
+  }
 }
 
-.text-center .dc-logo {
-  max-height: 100px;
-}
 
 .Margin {
   margin-top:250px;
