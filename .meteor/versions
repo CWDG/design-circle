@@ -20,7 +20,6 @@ htmljs@1.0.3
 http@1.0.10
 id-map@1.0.2
 insecure@1.0.2
-johnantoni:meteor-font-awesome@4.2.0
 jquery@1.11.3
 json@1.0.2
 kevohagan:sweetalert@0.4.2
@@ -47,7 +46,6 @@ rzymek:fullcalendar@2.2.6_2
 session@1.0.5
 spacebars@1.0.5
 spacebars-compiler@1.0.4
-tanis:bootstrap-social@0.1.1
 templating@1.0.11
 tracker@1.0.5
 ui@1.0.5
