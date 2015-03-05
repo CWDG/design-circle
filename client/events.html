@@ -1,0 +1,27 @@
+<template name="club_events">
+<div class="section events">
+  <div class ="content-wrapper">
+    <div class="content">
+      <h1 class="page-title">Events</h1>
+      <div class="tiles-container">
+        {{#each recentEvents}}
+        <div class="inline">
+          <img class="eventsPhoto" src="/img/eventsPhoto.png" />
+          <div class="eventInfo">
+            {{title}}
+            <br>
+            {{date}}, {{time}} 
+            <br>
+            {{description}}
+          </div>
+          <a class="s-link" href="http://www.google.com">Link to more information</a>
+        </div>
+        {{/each}}
+      </div>
+      <div class="b-link">
+        <a href="#" id="calendarLink" class="b-link" onclick="$('#fullCalModal').modal('show')">Calendar of Events</a>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
