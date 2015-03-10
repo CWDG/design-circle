@@ -10,14 +10,13 @@
   <div class="content">
     <h1 class="page-title">{{blogSectionHeader}}</h1>
     <div class="tiles-container blogLanding">
+      {{#each recentBlogPosts}}
       <div class="inline">
         <img class="eventsPhoto" src="/img/eventsPhoto.png" />
         <div class="blogInfo">
-          Title
-          <br />
-          Date
-          <br />
-          Natus, cor aut et adis autem inctotate
+          <p style="font-size:18px; line-height:16px;">{{title}}</p>
+          <p syle="fon-size:10px; line-height:10px;">{{date}}</p>
+          <p>Natus, cor aut et adis autem inctotate
           niam libus.
           Nist, venderatur? Oditam, vel ipis
           experiberepe porestistio omnihiti con
@@ -26,28 +25,11 @@
           simusaperia solor re quamusae. Ut
           acero es peria et dolestem. Omnimus
           comnis molessi nulparchit, sin custion.
+        </p>
         </div>
         <a class="s-link" href="http://www.google.com">Link to more information</a>
       </div>
-      <div class="inline">
-        <img class="eventsPhoto" src="/img/eventsPhoto.png" />
-        <div class="blogInfo">
-          Title
-          <br />
-          Date
-          <br />
-          Quatatur si berum, omnis site dollupti
-          quis sandandae cuptaspicae quostis
-          nonsequam, que si dit fuga. Qui dolorei
-          undam, ut quam acimagnat es
-          essin res molorep erumquid qui aut ea
-          venture peliquo culluptaest aut volesti
-          orerrum comnim simodit acesequat.
-          Ehentec tiatiae. Daecto molupta tiossit
-          dolla numquam, quiduci llenda peri.
-        </div>
-        <a class="s-link" href="http://www.google.com">Link to more information</a>
-      </div>
+      {{/each}}
     </div>
     {{#if loadBlogArchives}}
       {{> blogArchives}}

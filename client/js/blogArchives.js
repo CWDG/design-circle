@@ -40,7 +40,12 @@ Session.setDefault('loadBlogArchives', false);
 
   Template.blogArchives.helpers({
     blogPosts: function() {
-      console.log(BlogPosts.find({}).fetch().length);
       return BlogPosts.find({}, {limit: 5}, {sort: {date: -1}});
     }
   });
+
+  Template.blogLanding.helpers({
+    recentBlogPosts: function() {
+      return BlogPosts.find({}, {limit: 2}, {sort: {date: -1}});
+    }
+  })
