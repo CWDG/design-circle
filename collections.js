@@ -15,8 +15,8 @@ if (Events.find().fetch().length == 0) {
 }
 
 BlogPosts = new Mongo.Collection("blogPosts");
-/*if (BlogPosts.find().fetch().length == 0) {   <<< always evaluates to true because the template is not rendered.
-	console.log(BlogPosts.find().fetch().length)  <<< leave commented out and delete when blog entry submission feature is implemented in admin interface.
+/*if (BlogPosts.find().fetch().length == 0) {
+	console.log(BlogPosts.find().fetch().length)
 	BlogPosts.insert({
 		title: "First Blog Post!",
 		date: new Date(),
@@ -28,8 +28,18 @@ BlogPosts = new Mongo.Collection("blogPosts");
 		subject: "Tutorial"
 	});
 	BlogPosts.insert({
-		title: "Symmetry is your friend",
+		title: "More Stuff",
 		date: new Date(),
-		subject: "Opinion"
+		subject: "Goes here"
+	});
+	BlogPosts.insert({
+		title: "More Stuff",
+		date: new Date(),
+		subject: "Goes here"
+	});
+	BlogPosts.insert({
+		title: "More Stuff",
+		date: new Date(),
+		subject: "Goes here"
 	});
 }*/
