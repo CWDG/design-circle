@@ -59,59 +59,28 @@
                 <table >
                     <tr>
                         <td>
-                            Title 1
+                            Title
                         </td>
                         <td >
-                            Title 2
+                            Subject
                         </td>
                         <td>
-                            Title 3
+                            Date Created
                         </td>
                     </tr>
+                    {{#each blogPosts}}
                     <tr>
                         <td >
-                            Row 1
+                            {{title}}
                         </td>
                         <td>
-                            Row 1
+                            {{subject}}
                         </td>
                         <td>
-                            Row 1
+                            {{date}}
                         </td>
                     </tr>
-                    <tr>
-                        <td >
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            Row 3
-                        </td>
-                        <td>
-                            Row 3
-                        </td>
-                        <td>
-                            Row 3
-                        </td>
-                    </tr>
+                    {{/each}}
                 </table>
             </div>
 </template>

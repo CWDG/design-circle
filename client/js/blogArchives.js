@@ -14,3 +14,10 @@ Session.setDefault('loadBlogArchives', false);
       return Session.get('loadBlogArchives');
     }
   });
+
+  Template.blogArchives.helpers({
+    blogPosts: function() {
+      console.log(BlogPosts.find({}).fetch().length);
+      return BlogPosts.find({}, {sort: {date: -1}});
+    }
+  });
