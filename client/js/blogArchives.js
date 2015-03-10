@@ -20,7 +20,7 @@ Session.setDefault('loadBlogArchives', false);
         return 'Blog';
       }
       else {
-        return 'Blog Archives';
+        return 'Blog';
       }
     },
     loadBlogArchives: function () {
