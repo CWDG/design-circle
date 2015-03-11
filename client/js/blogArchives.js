@@ -26,6 +26,7 @@ Session.setDefault('loadBlogArchive', false);
     loadBlogArchive: function () {
       $('.blogLanding').fadeOut('fast', function() {
         $('.blogArchive').show("slide", { direction: "right" }, 400);
+        $('#blogArchiveHeader').fadeIn('slow');
       });
       return Session.get('loadBlogArchive');
     },
@@ -35,7 +36,7 @@ Session.setDefault('loadBlogArchive', false);
   });
 
   Template.blogArchive.rendered = function() {
-    $('.blogArchive').hide();
+    $('.blogArchive, #blogArchiveHeader').hide();
   }
 
   Template.blogArchive.helpers({
