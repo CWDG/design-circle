@@ -2,71 +2,12 @@
 <title>Design Circle</title>
 </head>
 <body>
+	{{> navbar}}
+  
+	{{> titlepage}}
 
-  <nav class="main-nav dc-green-background">
-    <div class="vertically-centered">
-      <img class="brand_image" src="/img/dc_invert.png" alt="Design Circle Logo" />
-      <ul>
-        <li><a id="about-link">About</a></li>
-        <li><a id="events-link">Events</a></li>
-        <li><a id="news-link">News</a></li>
-        <li><a id="contact-link">Contact</a></li>
-        <li>
-					<a class="social-media-button" href="https://www.facebook.com/pages/The-Ohio-State-Design-Circle/363132557110274" target="_blank"><img src="/img/social_media/Facebook.png"></a>
-					<a class="social-media-button" href="https://twitter.com/design_circle" target="_blank"><img src="/img/social_media/Twitter.png"></a>
-					<a class="social-media-button" href="http://instagram.com/osudesigncircle/" target="_blank"><img src="/img/social_media/Instagram.png"></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="section ex2">
-    <div class ="content-wrapper">
-      <div class="content">
-        <div class="text-center">
-          <h1 class="main-title"><b>D</b>esign <b>C</b>ircle</h1>
-          <img class="dc-logo" alt="Design Circle" src="/img/dc_invert.png">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section about">
-    <div class ="content-wrapper">
-      <div class="content">
-        <h1 class="page-title exAboutTop">About</h1>
-        <p class="exAboutBody">
-        Ximintecus aspelest assequas et faccatem aut et, sunt
-        magnia volor mos mos dolorum doles iurias id qui apicita
-        pro minimust faceribus, veliquaecto cus.
-        Bus velit quia simin consed mos dolo blaborum sitiund ita-
-        tium voluptaere, siminci llest, istiberia nust rero ium ent.
-        Xerio. Ut et et, ullitas qui cus volorerrum hiciis aut harum ne
-        pro inctiur sendi abo. Tistiatur, volorem que et res autem de
-        sequam velicae nonsed qui quiae atur rere est, odion ea
-        vent, qui dollorrum aut et qui officil exeriosaped quaeprem
-        ium dolendes et aut deribus ad quodipsunt odiscimi, core
-        core renestemque vitia et laborro voluptiis eos idebitia de
-        litati sit voloremque pre, et maximi, coreptam reperaeperi
-        assequi busant porro incto beatem. Tur, vitis as et que nat.
-        Xeriant. Hit aborenti inciis aces rendipi dellabore nusam
-        inverat aecestrum ut laces ut modit qui dolestias inctur? Is
-        dolesequi aut rerciis maximet modi noneceature, quidias
-        moluptate cusa autet que dollupti derum dolorer spicilia
-        ea que omnimagnis ne eres excearis cum ne nesci untiur, ut
-        maAnisit, expedicia doluptius modis vendici debitate rem-
-        Loribea ventemossim et lia cullaccullam si cullupt aquideles
-        volliqu odignist, seque nosto magnimus es nobis voluptas es
-        peruptas re necumetus as dicipsam que dolupta ipistis dunt
-        </p>
-        <div class="about-pictures">
-          <img alt="stock photography" src="/img/eventsPhoto.png" />
-          <img alt="stock photography" src="/img/eventsPhoto.png" />
-        </div>
-      </div>
-    </div>
-  </div>
-
+	{{> aboutpage}}
+  
   <div class="section team">
     <div class ="content-wrapper">
       <div class="content">
@@ -213,51 +154,7 @@
     </div>
   </div>
 
-  <div class="section talk">
-    <div class ="content-wrapper">
-      <div class="content">
-        <h1 class="page-title">Let's Talk!</h1>
-        <div class="contactFormContainer inline">
-          <p>Are you a professional or a student interested in partnering for an event or becoming more involved? Contact us here!</p>
-          <form class="contactForm">
-            <label for="contactFullName">Your Name</label>
-            <input id="contactFullName"/>
-            <br />
-            <label for="contactAffiliation">Company Name or Student Year</label>
-            <input id="contactAffiliation"/>
-            <br />
-            <label for="contactEmail">Email</label>
-            <input id="contactEmail"/>
-            <br />
-            <label for="contactMessage">Message</label>
-            <textarea id="contactMessage">
-            </textarea>
-            <br />
-            <input type="submit" id="contactFormSubmit" value="Submit"/>
-          </form>
-        </div>
-        <div class="contactFormImage inline">
-          <img src="/img/contactFormPhoto.png">
-        </div>
-      </div>
-    </div>
-  </div>
+	{{> contactform}}
 
-  <div id="fullCalModal" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only"></span></button>
-          <h4 id="modalTitle" class="modal-title"></h4>
-        </div>
-        <div id="modalBody" class="modal-body">
-          {{> fullcalendar height="100%"}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+	{{> calendar}}
 </body>
