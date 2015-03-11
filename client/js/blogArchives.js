@@ -1,44 +1,44 @@
-Session.setDefault('loadBlogArchives', false);
+Session.setDefault('loadBlogArchive', false);
 
   Template.blog.events({
-    'click #blogArchivesLink': function () {
-      return Session.set('loadBlogArchives', true);
+    'click #blogArchiveLink': function () {
+      return Session.set('loadBlogArchive', true);
     }
   });
 
   Template.blogLanding.helpers({
     archiveLinkText: function() {
-      if(Session.get('loadBlogArchives') == false) {
-        return 'Archives';
+      if(Session.get('loadBlogArchive') == false) {
+        return 'Archive';
       }
       else {
         return 'Back';
       }
     },
     blogSectionHeader: function() {
-      if(Session.get('loadBlogArchives') == false) {
+      if(Session.get('loadBlogArchive') == false) {
         return 'Blog';
       }
       else {
         return 'Blog';
       }
     },
-    loadBlogArchives: function () {
+    loadBlogArchive: function () {
       $('.blogLanding').fadeOut('fast', function() {
-        $('.blogArchives').show("slide", { direction: "right" }, 400);
+        $('.blogArchive').show("slide", { direction: "right" }, 400);
       });
-      return Session.get('loadBlogArchives');
+      return Session.get('loadBlogArchive');
     },
     recentBlogPosts: function() {
       return BlogPosts.find({}, {limit: 2}, {sort: {date: -1}});
     }
   });
 
-  Template.blogArchives.rendered = function() {
-    $('.blogArchives').hide();
+  Template.blogArchive.rendered = function() {
+    $('.blogArchive').hide();
   }
 
-  Template.blogArchives.helpers({
+  Template.blogArchive.helpers({
     blogPosts: function() {
       return BlogPosts.find({}, {limit: 7}, {sort: {date: -1}});
     }

@@ -34,17 +34,17 @@
       </div>
       {{/each}}
     </div>
-    {{#if loadBlogArchives}}
-      {{> blogArchives}}
+    {{#if loadBlogArchive}}
+      {{> blogArchive}}
     {{/if}}
     <div class="b-link">
-      <a class="b-link" id="blogArchivesLink">{{{archiveLinkText}}}</a>
+      <a class="b-link" id="blogArchiveLink">{{{archiveLinkText}}}</a>
     </div>
   </div>
 </template>
 
-<template name="blogArchives">
-  <div class="tiles-container blogArchives" style="margin-top:20px;">
+<template name="blogArchive">
+  <div class="tiles-container blogArchive" style="margin-top:20px;">
     <h2 style="text-align:center; color:dimgray">Blog Archive</h2>
     <div class="CSSTableGenerator">
       <table>
