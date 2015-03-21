@@ -1,0 +1,66 @@
+<template name="blog">
+  <div class="section blog">
+    <div class ="content-wrapper">
+      {{>blogLanding}}
+    </div>
+  </div>
+</template>
+
+<template name="blogLanding">
+  <div class="content">
+    <h1 class="page-title">{{blogSectionHeader}}</h1>
+    <div class="tiles-container blogLanding">
+      {{#each recentBlogPosts}}
+      <div class="inline">
+        <img class="eventsPhoto" src="/img/eventsPhoto.png" />
+        <div class="blogInfo">
+          <p style="font-size:18px; line-height:18px;">
+            {{title}}
+            <span style="font-size:10px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
+          </p>
+          <p syle="font-size:14px; line-height:10px;">{{date}}</p>
+          <p>Natus, cor aut et adis autem inctotate
+          niam libus.
+          Nist, venderatur? Oditam, vel ipis
+          experiberepe porestistio omnihiti con
+          core dolenis molupta erumenis acerum
+          et est, etur magnime net volor
+          simusaperia solor re quamusae. Ut
+          acero es peria et dolestem. Omnimus
+          comnis molessi nulparchit, sin custion.
+        </p>
+        </div>
+        <a class="s-link" href="http://www.google.com">Read More</a>
+      </div>
+      {{/each}}
+    </div>
+    {{#if loadBlogArchive}}
+      {{> blogArchive}}
+    {{/if}}
+    <div class="b-link">
+      <a class="b-link" id="blogArchiveLink">{{{archiveLinkText}}}</a>
+    </div>
+  </div>
+</template>
+
+<template name="blogArchive">
+  <h2 id="blogArchiveHeader" style="text-align:right; padding-right:20px; margin-top:-30px; color:dimgray">Archive</h2>
+  <div class="tiles-container blogArchive">
+    <div class="CSSTableGenerator">
+      <table>
+        <tr>
+          <td>Title</td>
+          <td>Subject</td>
+          <td>Date Created</td>
+        </tr>
+        {{#each blogPosts}}
+          <tr>
+            <td><a href={{href}} style="font-weight:bold">{{title}}</a></td>
+            <td>{{subject}}</td>
+            <td>{{date}}</td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</template>
