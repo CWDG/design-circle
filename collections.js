@@ -1,15 +1,20 @@
+Schemas = {}
 Events = new Mongo.Collection("events");
-if (Events.find().fetch().length == 0) {
-	Events.insert({
-		title: "Meeting",
-		date: new Date(),
-		time: "8:00",
-		description: "Just a regular ol' meeting."
-	});
-	Events.insert({
-		title: "Partai",
-		date: new Date(),
-		time: "5:00",
-		description: "We are the designas who likea to partai"
-	});
-}
+
+Schemas.Events = new SimpleSchema({
+	title: {
+		type: String,
+		max: 60
+	},
+	description: {
+		type: String,
+		autoform: {
+			rows: 5
+		}
+	},
+	date: {
+		type: Date,
+		label: 'Date'
+	}
+});
+Events.attachSchema(Schemas.Events);
