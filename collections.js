@@ -17,6 +17,7 @@ Schemas.Events = new SimpleSchema({
 		label: 'Date'
 	}
 });
+Events.attachSchema(Schemas.Events);
 
 BlogPosts = new Mongo.Collection("blogPosts");
 
