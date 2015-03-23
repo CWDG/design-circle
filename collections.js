@@ -17,11 +17,10 @@ Schemas.Events = new SimpleSchema({
 		label: 'Date'
 	}
 });
-Events.attachSchema(Schemas.Events);
 
 BlogPosts = new Mongo.Collection("blogPosts");
 
-Schemas.BlogPosts = new SimpleSchma({
+Schemas.BlogPosts = new SimpleSchema({
 	title: {
 		type: String,
 		max: 80
@@ -39,3 +38,4 @@ Schemas.BlogPosts = new SimpleSchma({
 		max: 500
 	}
 });
+BlogPosts.attachSchema(Schemas.BlogPosts);
