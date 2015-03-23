@@ -2,6 +2,6 @@ Router.route('/', function() {
 	this.render('main');
 });
 
-/*Router.route('/login', function() {
+Router.route('/login', function() {
 	this.render('login');
-});*/
+});
