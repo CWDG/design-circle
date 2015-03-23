@@ -44,23 +44,12 @@
 </template>
 
 <template name="blogArchive">
-  <h2 id="blogArchiveHeader" style="text-align:right; padding-right:20px; margin-top:-30px; color:dimgray">Archive</h2>
+  <h2 id="blogArchiveHeader">Archive</h2>
   <div class="tiles-container blogArchive">
-    <div class="CSSTableGenerator">
-      <table>
-        <tr>
-          <td>Title</td>
-          <td>Subject</td>
-          <td>Date Created</td>
-        </tr>
-        {{#each blogPosts}}
-          <tr>
-            <td><a href={{href}} style="font-weight:bold">{{title}}</a></td>
-            <td>{{subject}}</td>
-            <td>{{date}}</td>
-          </tr>
-        {{/each}}
-      </table>
-    </div>
+    {{#each blogPosts}}
+      <div><a href={{href}}>{{title}}</a></div>
+      <div>{{subject}}</div>
+      <div>{{date}}</div>
+    {{/each}}
   </div>
 </template>
