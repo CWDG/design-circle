@@ -15,3 +15,9 @@ Template.navbar.events({
 		$.scrollify("move", 5)
 	}
 });
+
+Template.navbar.helpers({
+	isAdmin: function() {
+		return Meteor.user() && Meteor.user().roles.indexOf('admin') >= 0;
+	}
+});
