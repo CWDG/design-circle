@@ -1,3 +1,5 @@
+Meteor.subscribe("blogposts");
+
 Session.setDefault('loadBlogArchive', false);
 
   Template.blog.events({
