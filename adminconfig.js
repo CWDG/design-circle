@@ -8,6 +8,14 @@ AdminConfig = {
 				{label: 'Description', name: 'description'},
 				{label: 'Date', name: 'date'}
 			]
+		},
+		BlogPosts: {
+			tableColumns: [
+				{label: 'Title', name: 'title'},
+				{label: 'Subject', name: 'subject'},
+				{label: 'Date', name: 'date'},
+				{label: 'Image URL', name: 'href'}
+			]
 		}
 	}
 };
