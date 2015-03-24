@@ -252,10 +252,8 @@ input#contactFormSubmit {
 }
 
 .ex2 {
-  background-image: url(/img/cat2.jpg);
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: contain;
+  background: #B7B7B7 center center no-repeat fixed url(/img/cat2.jpg);
+  background-size: cover;
 }
 
 .text-center {
@@ -270,4 +268,3 @@ input#contactFormSubmit {
 .Margin {
   margin-top:250px;
 }
-
