@@ -1,6 +1,7 @@
 AdminConfig = {
 	name: 'Design Circle',
 	adminEmails: ['fuhr.8@osu.edu',
+		'schuller.33@osu.edu',
 		'rogman.1@osu.edu',
 		'bulgart.1@osu.edu',
 		'fuller.412@osu.edu',
