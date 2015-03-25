@@ -20,6 +20,13 @@ AdminConfig = {
 				{label: 'Date', name: 'date'},
 				{label: 'Image URL', name: 'href'}
 			]
+		},
+		Team: {
+			tableColumns: [
+				{label: 'Name', name: 'name'},
+				{label: 'Position', name: 'position'},
+				{label: 'Major', name: 'major'}
+			]
 		}
 	}
 };
