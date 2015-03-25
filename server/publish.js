@@ -5,3 +5,7 @@ Meteor.publish("events", function() {
 Meteor.publish("blogposts", function() {
 	return BlogPosts.find();
 });
+
+Meteor.publish("Members",function() {
+	return Team.find();
+});
