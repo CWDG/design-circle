@@ -1,6 +1,12 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 
+@mixin centerer {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-25%);
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -25,6 +31,7 @@ body {
   position: fixed;
   bottom: 0;
   text-align: center;
+  z-index: 2;
 }
 
 .main-nav .vertically-centered {
@@ -76,9 +83,17 @@ body {
   background-color: white;
 }
 
+.content-wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
 .content {
   @include span-columns(6);
   @include shift(3);
+  @include centerer;
 }
 
 .talk .content,
