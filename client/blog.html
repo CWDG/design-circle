@@ -44,12 +44,14 @@
 </template>
 
 <template name="blogArchive">
-  <h2 id="blogArchiveHeader">Archive</h2>
-  <div class="tiles-container blogArchive">
-    {{#each blogPosts}}
-      <div><a href={{href}}>{{title}}</a></div>
-      <div>{{subject}}</div>
-      <div>{{date}}</div>
-    {{/each}}
+  <div class="archive">
+    <h2 id="blogArchiveHeader">Archive</h2>
+    <div class="tiles-container blogArchive">
+      {{#each blogPosts}}
+        <h3><a href={{href}}>{{title}}</a></h3>
+        <div>{{subject}}</div>
+        <div>{{date}}</div>
+      {{/each}}
+    </div>
   </div>
 </template>
