@@ -40,3 +40,22 @@ Schemas.BlogPosts = new SimpleSchema({
 	}
 });
 BlogPosts.attachSchema(Schemas.BlogPosts);
+
+Team = new Mongo.Collection("Members");
+
+Schemas.Team = new SimpleSchema({
+        name: {
+                type: String,
+                max: 60
+        },
+        position: {
+                type: String,
+             	max:15
+        },
+        major: {
+                type: String,
+                max:50
+        }
+});
+Team.attachSchema(Schemas.Team);
+
