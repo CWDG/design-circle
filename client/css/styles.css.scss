@@ -32,47 +32,44 @@ body {
   bottom: 0;
   text-align: center;
   z-index: 2;
-}
 
-.main-nav .vertically-centered {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-}
+  .vertically-centered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
 
-.main-nav .vertically-centered ul {
-  list-style-type: none;
-  max-height: 100%;
-  display: inline;
-}
+    ul {
+      list-style-type: none;
+      max-height: 100%;
+      display: inline;
 
-.main-nav .vertically-centered .brand_image {
-  margin-left: 100px;
-  cursor: pointer;
-}
+      li {
+        padding: 0 40px;
+        max-height: 100%;
+        display: inline;
 
-.main-nav .vertically-centered ul li {
-  padding: 0 40px;
-  max-height: 100%;
-  display: inline;
-}
+        a {
+          color: white;
+          font-weight: lighter;
+          font-size: 1.5em;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
 
-.main-nav .vertically-centered ul li a {
-  color: white;
-  font-weight: lighter;
-  font-size: 1.5em;
-  text-decoration: none;
-  cursor: pointer;
+    .brand_image {
+      margin-left: 100px;
+      cursor: pointer;
+      max-height: 50px;
+      display: inline;
+    }
+  }
 }
 
 .social-media-button > img {
-	width: 50px;
-}
-
-.brand_image {
-  max-height: 50px;
-  display: inline;
+  width: 50px;
 }
 
 .section {
@@ -279,7 +276,6 @@ input#contactFormSubmit {
     height: 300px;
   }
 }
-
 
 .Margin {
   margin-top:250px;
