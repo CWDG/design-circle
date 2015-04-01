@@ -1,12 +1,12 @@
-$(document).ready(function() {
+Template.main.rendered = function() {
     $('a[href^=#]').on("click", function() {
-        alert("Hello!");
-
-        var tOffset = t.offset().top;
+        var selector = $(this).attr('href');
+        var tOffset = $(selector).offset().top;
+        console.log(tOffset);
         $('html,body').animate({
-            scrollTop: tOffset-20
+            scrollTop: tOffset
         },
         'slow');
         return false;
     });
-});
+}
