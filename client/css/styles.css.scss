@@ -1,6 +1,12 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 
+@mixin centerer {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-25%);
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -25,47 +31,45 @@ body {
   position: fixed;
   bottom: 0;
   text-align: center;
-}
+  z-index: 2;
 
-.main-nav .vertically-centered {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-}
+  .vertically-centered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
 
-.main-nav .vertically-centered ul {
-  list-style-type: none;
-  max-height: 100%;
-  display: inline;
-}
+    ul {
+      list-style-type: none;
+      max-height: 100%;
+      display: inline;
 
-.main-nav .vertically-centered .brand_image {
-  margin-left: 100px;
-  cursor: pointer;
-}
+      li {
+        padding: 0 40px;
+        max-height: 100%;
+        display: inline;
 
-.main-nav .vertically-centered ul li {
-  padding: 0 40px;
-  max-height: 100%;
-  display: inline;
-}
+        a {
+          color: white;
+          font-weight: lighter;
+          font-size: 1.5em;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
 
-.main-nav .vertically-centered ul li a {
-  color: white;
-  font-weight: lighter;
-  font-size: 1.5em;
-  text-decoration: none;
-  cursor: pointer;
+    .brand_image {
+      margin-left: 100px;
+      cursor: pointer;
+      max-height: 50px;
+      display: inline;
+    }
+  }
 }
 
 .social-media-button > img {
-	width: 50px;
-}
-
-.brand_image {
-  max-height: 50px;
-  display: inline;
+  width: 50px;
 }
 
 .section {
@@ -76,9 +80,17 @@ body {
   background-color: white;
 }
 
+.content-wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
 .content {
   @include span-columns(6);
   @include shift(3);
+  @include centerer;
 }
 
 .talk .content,
@@ -147,7 +159,7 @@ body {
   line-height: 19px;
 
   max-width: 275px;
-  height: 200px;
+  height: 145px;
   overflow: hidden;
   padding-top: 10px;
 }
@@ -174,7 +186,7 @@ a:hover {
 }
 
 div.b-link {
-  padding-top: 50px;
+  padding-top: 30px;
   text-align: right;
 }
 
@@ -252,22 +264,19 @@ input#contactFormSubmit {
 }
 
 .ex2 {
-  background-image: url(/img/cat2.jpg);
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: contain;
+  background: #B7B7B7 center center no-repeat fixed url(/img/cat2.jpg);
+  background-size: cover;
 }
 
 .text-center {
   color: white;
 
   .dc-logo {
+    margin-top: 30px;
     height: 300px;
   }
 }
 
-
 .Margin {
   margin-top:250px;
 }
-

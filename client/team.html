@@ -1,0 +1,26 @@
+<template name="team_members">
+ <div class="section team">
+    <div class ="content-wrapper">
+      <div class="content">
+        <h1 class="page-title">The Team</h1>
+        <div class="tiles-container">
+         {{#each teamMembers}}
+	   <div class="inline">
+            <img class='memberPhoto' src='/img/teamMember.png' />
+            <div class='memberInfo'>
+              {{name}}
+              <br />
+              {{position}}
+              <br />
+              {{major}}
+            </div>
+          </div>
+	{{/each}}
+	</div>
+        <div class="b-link">
+          <a class="b-link" href="http://www.google.com">More of the Team</a>
+        </div>
+      </div>
+    </div>
+</div>
+</template>
