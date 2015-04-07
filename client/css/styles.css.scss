@@ -67,121 +67,6 @@ body {
     }
   }
 }
-
-@media only screen and (max-device-width: 480px) {
-	.main-nav {
-		position: fixed;
-		top: 0;
-		left: -100px;
-		max-width: 284px;
-		float: left;
-		height: 100%;
-		width: 100%;
-		-moz-transition: all 300ms;
-		-webkit-transition: all 300ms;
-		transition: all 300ms;
-		z-index: -1;
-	}
-
-	.main-nav .vertically-centered {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		text-align: center;
-	}
-
-	.main-nav .vertically-centered ul {
-		list-style-type: none;
-		max-height: 100%;
-		display: block;
-		margin: 40px;
-		padding: 0;
-		-moz-transition: all 300ms;
-		-webkit-transition: all 300ms;
-		transition: all 300ms;
-	}
-
-	.main-nav .vertically-centered .brand_image {
-		margin-left: 100px;
-		cursor: pointer;
-	}
-
-	.main-nav .vertically-centered ul li {
-		padding: 0 40px;
-		max-height: 100%;
-		display: inline;
-	}
-
-	.main-nav .vertically-centered ul li a {
-		color: white;
-		font-weight: lighter;
-		font-size: 1.5em;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	#top-panel {
-		display: none;
-	}
-
-	.fa-bars {
-		position: fixed;
-		top: 5px;
-		left: 5px;
-		background: #49A447;
-		color: white;
-		border: 1px solid black;
-		border-radius: 5px;
-		padding: 5px;
-		font-size: 6em;
-		z-index: 5;
-		-moz-transition: all 300ms;
-		-webkit-transition: all 300ms;
-		transition: all 300ms;
-	}
-
-	div#content {
-		position: fixed;
-		overflow-y: scroll;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border-radius: 0;
-		-mox-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		-moz-box-shadow: -3px 0 6px #4a5562;
-		-webkit-box-shadow: -3px 0 6px #4a5562;
-		box-shadow: -3px 0 6px #4a5562;
-		-moz-transition: all 300ms;
-		-webkit-transition: all 300ms;
-		transition: all 300ms;
-	}
-
-
-	body.menu-active {
-		left: 248px;
-		border-radius: 7px 0 0 7px;
-
-		nav.main-nav {
-			left: 0px;
-			ul {
-				left: 0px;
-			}
-		}
-
-		div#content {
-			left: 284px;
-			border-radius: 7px 0 0 7px;
-		}
-
-		.fa-bars {
-			left: 289px;
-		}
-	}
-}
-
 .social-media-button > img {
   width: 50px;
 }
@@ -393,4 +278,127 @@ input#contactFormSubmit {
 
 .Margin {
   margin-top:250px;
+}
+
+//Mobile CSS
+@media only screen and (max-device-width: 480px) {
+	.main-nav {
+		position: fixed;
+		top: 0;
+		left: -100px;
+		max-width: 284px;
+		float: left;
+		height: 100%;
+		width: 100%;
+		-moz-transition: all 300ms;
+		-webkit-transition: all 300ms;
+		transition: all 300ms;
+		z-index: -1;
+	}
+
+	.main-nav .vertically-centered {
+		position: relative;
+    transform: translateY(0);
+		top: 0;
+		text-align: center;
+	}
+
+	.main-nav .vertically-centered ul {
+		list-style-type: none;
+		max-height: 100%;
+		display: block;
+		margin: 40px;
+		padding: 0;
+		-moz-transition: all 300ms;
+		-webkit-transition: all 300ms;
+		transition: all 300ms;
+	}
+
+	.main-nav .vertically-centered .brand_image {
+		margin-left: 100px;
+		cursor: pointer;
+	}
+
+	.main-nav .vertically-centered ul li {
+		padding: 0 40px;
+		max-height: 100%;
+		display: inline;
+		font-size: 2.53em;
+		text-align: top;
+	}
+
+	.main-nav .vertically-centered ul li a {
+		color: white;
+		font-weight: lighter;
+		font-size: 1.5em;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	#top-panel {
+		display: none;
+	}
+
+	.fa-bars {
+		position: fixed;
+		top: 5px;
+		left: 5px;
+		background: #49A447;
+		color: white;
+		border: 1px solid black;
+		border-radius: 5px;
+		padding: 5px;
+		font-size: 6em;
+		z-index: 5;
+		-moz-transition: all 300ms;
+		-webkit-transition: all 300ms;
+		transition: all 300ms;
+	}
+
+	div#content {
+		position: fixed;
+		overflow-y: scroll;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+		-mox-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		-moz-box-shadow: -3px 0 6px #4a5562;
+		-webkit-box-shadow: -3px 0 6px #4a5562;
+		box-shadow: -3px 0 6px #4a5562;
+		-moz-transition: all 300ms;
+		-webkit-transition: all 300ms;
+		transition: all 300ms;
+	}
+
+
+	body.menu-active {
+		left: 248px;
+		border-radius: 7px 0 0 7px;
+
+		nav.main-nav {
+			left: 0px;
+			ul {
+				left: 0px;
+			}
+		}
+
+		div#content {
+			left: 284px;
+			border-radius: 7px 0 0 7px;
+		}
+
+		.fa-bars {
+			left: 289px;
+		}
+	}
+
+	/* Full-sized inlines */
+	.events .inline,
+	.blog .inline {
+		@include span-columns(12);
+	}
 }
