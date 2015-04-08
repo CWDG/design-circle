@@ -19,7 +19,7 @@ AdminConfig = {
 				{label: 'Title', name: 'title'},
 				{label: 'Subject', name: 'subject'},
 				{label: 'Date', name: 'date'},
-				{label: 'Image URL', name: 'href'}
+				{label: 'Image URL', name: 'image'}
 			]
 		},
 		Team: {
