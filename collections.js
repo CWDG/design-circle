@@ -34,20 +34,16 @@ Schemas.BlogPosts = new SimpleSchema({
 		type: Date,
 		label: 'Date'
 	},
-	href: {
-		type: String,
-		max: 500
-	},
-	image: {
-		type: String,
-		autoform: {
-			afFieldInput: {
-				type: 'fileUpload',
-				collection: 'BlogImages'
+	picture: {
+        type: String,
+        autoform: {
+            afFieldInput: {
+                type: 'fileUpload',
+                collection: 'Images'
+								}
+							},
+        label: 'Choose Image'
 			}
-		},
-		label: 'Choose file'
-	}
 });
 BlogPosts.attachSchema(Schemas.BlogPosts);
 
@@ -69,3 +65,13 @@ Schemas.Team = new SimpleSchema({
 });
 Team.attachSchema(Schemas.Team);
 
+Images = new FS.Collection("images", {stores: [new FS.Store.GridFS("images", {})]});
+
+Images.allow({
+  insert: function(userId, doc) {
+    return true;
+	},
+  download: function(userId) {
+    return true;
+	}
+});

@@ -33,7 +33,7 @@ Session.setDefault('loadBlogArchive', false);
       return Session.get('loadBlogArchive');
     },
     recentBlogPosts: function() {
-      return BlogPosts.find({}, {limit: 2}, {sort: {title: -1}});
+      return BlogPosts.find({}, {limit: 2, sort: {date: -1}});
     }
   });
 

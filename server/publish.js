@@ -10,14 +10,6 @@ Meteor.publish("Members",function() {
 	return Team.find();
 });
 
-Meteor.startup(function() {
-	BlogImages.allow({
-		insert: function(userId, doc) { return true; },
-		download: function(userId) { return true; },
-		update: function(userId, doc) { return true; }
-	});
-});
-
-Meteor.publish("blogimages", function() {
-	return BlogImages.find();
+Meteor.publish('images', function() {
+  return Images.find();
 });
