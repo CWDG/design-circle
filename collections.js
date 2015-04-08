@@ -59,3 +59,11 @@ Schemas.Team = new SimpleSchema({
 });
 Team.attachSchema(Schemas.Team);
 
+Images = new FS.Collection("images", {stores: [new FS.Store.GridFS("images", {})]});
+
+//translate coffeescript
+/*Images.allow
+  insert: (userId, doc) ->
+    true
+  download: (userId)->
+    true*/
