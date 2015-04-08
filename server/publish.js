@@ -9,3 +9,7 @@ Meteor.publish("blogposts", function() {
 Meteor.publish("Members",function() {
 	return Team.find();
 });
+
+Meteor.publish("blogimages", function() {
+	return BlogImages.find();
+});

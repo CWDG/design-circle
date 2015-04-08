@@ -37,6 +37,16 @@ Schemas.BlogPosts = new SimpleSchema({
 	href: {
 		type: String,
 		max: 500
+	},
+	image: {
+		type: String,
+		autoform: {
+			afFieldInput: {
+				type: 'fileUpload',
+				collection: 'BlogImages'
+			}
+		},
+		label: 'Choose file'
 	}
 });
 BlogPosts.attachSchema(Schemas.BlogPosts);
