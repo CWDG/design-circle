@@ -1,12 +1,12 @@
 <template name="navbar">
 	<nav class="main-nav dc-green-background">
 		<div class="vertically-centered">
-			<img class="brand_image" src="/img/dc_invert.png" alt="Design Circle Logo" />
+			<a href="#top"><img class="brand_image" src="/img/dc_invert.png" alt="Design Circle Logo" /></a>
 			<ul>
-				<li><a id="about-link">About</a></li>
-				<li><a id="events-link">Events</a></li>
-				<li><a id="news-link">Blog</a></li>
-				<li><a id="contact-link">Contact</a></li>
+				<li><a id="about-link" href="#about">About</a></li>
+				<li><a id="events-link" href="#events">Events</a></li>
+				<li><a id="news-link" href="#blog">Blog</a></li>
+				<li><a id="contact-link" href="#contact">Contact</a></li>
 				{{#if isAdmin}}
 				<li><a href="/admin">Admin</a></li>
 				{{/if}}
