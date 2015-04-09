@@ -68,10 +68,18 @@ Team.attachSchema(Schemas.Team);
 Images = new FS.Collection("images", {stores: [new FS.Store.GridFS("images", {})]});
 
 Images.allow({
+<<<<<<< HEAD
+  insert: function (userId, doc) {
+ 		return true
+		},
+  download: function (userId) {
+	  return true
+=======
   insert: function(userId, doc) {
     return true;
 	},
   download: function(userId) {
     return true;
+>>>>>>> f9947c54afbfface95d9e070acd41583ec9463fd
 	}
 });
