@@ -72,6 +72,10 @@ body {
   width: 50px;
 }
 
+#penultimate-container {
+  width: 600%;
+}
+
 .section {
   @include outer-container(100%);
 
