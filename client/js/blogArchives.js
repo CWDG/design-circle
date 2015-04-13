@@ -39,7 +39,7 @@ Session.setDefault('loadBlogArchive', false);
     blogImageView: function(picture) {
       //console.log(picture)
       console.log(Images.findOne(picture));
-      return Images.findOne(picture);
+      return Images.findOne(picture).url;
     }
   });
 
