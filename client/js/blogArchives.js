@@ -1,4 +1,5 @@
 Meteor.subscribe("blogposts");
+Meteor.subscribe("images");
 
 Session.setDefault('loadBlogArchive', false);
 
@@ -34,6 +35,11 @@ Session.setDefault('loadBlogArchive', false);
     },
     recentBlogPosts: function() {
       return BlogPosts.find({}, {limit: 2, sort: {date: -1}});
+    },
+    blogImageView: function(picture) {
+      //console.log(picture)
+      console.log(Images.findOne(picture));
+      return Images.findOne(picture);
     }
   });
 

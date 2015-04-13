@@ -1,5 +1,15 @@
 Schemas = {}
 Events = new Mongo.Collection("events");
+Images = new FS.Collection("images", {stores: [new FS.Store.GridFS("images", {})]});
+
+Images.allow({
+  insert: function(userId, doc) {
+    return true;
+	},
+  download: function(userId) {
+    return true;
+	}
+});
 
 Schemas.Events = new SimpleSchema({
 	title: {
@@ -64,14 +74,3 @@ Schemas.Team = new SimpleSchema({
         }
 });
 Team.attachSchema(Schemas.Team);
-
-Images = new FS.Collection("images", {stores: [new FS.Store.GridFS("images", {})]});
-
-Images.allow({
-  insert: function(userId, doc) {
-    return true;
-	},
-  download: function(userId) {
-    return true;
-	}
-});
