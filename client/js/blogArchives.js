@@ -37,9 +37,7 @@ Session.setDefault('loadBlogArchive', false);
       return BlogPosts.find({}, {limit: 2, sort: {date: -1}});
     },
     blogImageView: function(picture) {
-      //console.log(picture)
-      console.log(Images.findOne(picture));
-      return Images.findOne(picture).url;
+      return Images.findOne(picture).url();
     }
   });
 
