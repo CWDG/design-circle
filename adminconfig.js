@@ -26,7 +26,8 @@ AdminConfig = {
 			tableColumns: [
 				{label: 'Name', name: 'name'},
 				{label: 'Position', name: 'position'},
-				{label: 'Major', name: 'major'}
+				{label: 'Major', name: 'major'},
+				{label: 'Image URL', name: 'image'}
 			]
 		}
 	}

@@ -78,6 +78,16 @@ Schemas.Team = new SimpleSchema({
         major: {
                 type: String,
                 max:50
-        }
+        },
+				picture: {
+							type: String,
+							autoform: {
+									afFieldInput: {
+											type: 'fileUpload',
+											collection: 'Images'
+											}
+										},
+							label: 'Choose Image'
+				}
 });
 Team.attachSchema(Schemas.Team);
