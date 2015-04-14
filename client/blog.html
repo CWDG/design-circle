@@ -8,13 +8,13 @@
       <div class="content">
         <div class="tiles-container blogLanding">
           {{#each recentBlogPosts}}
-          <div class="inline">
+          <div class='blogPostContainer'>
+            <p style="font-size:2em; line-height:1em;">
+            {{title}}
+            <span style="font-size:14px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
+            </p>
             <img class="eventsPhoto" src="{{getBlogPostImage picture}}" />
             <div class="blogInfo">
-              <p style="font-size:18px; line-height:18px;">
-              {{title}}
-              <span style="font-size:10px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
-              </p>
               <p style="font-size:14px; line-height:10px;">{{date}}</p>
               <p>Natus, cor aut et adis autem inctotate
               niam libus.
@@ -22,9 +22,9 @@
               experiberepe porestistio omnihiti con
               core. Natus, cor aut et adis autem inctotate
               niam libus.
+              <a class="s-link" href="{{href}}">Read More</a>
               </p>
             </div>
-            <a class="s-link" href="{{href}}">Read More</a>
           </div>
           {{/each}}
         </div>
