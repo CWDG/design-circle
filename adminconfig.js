@@ -19,7 +19,6 @@ AdminConfig = {
 				{label: 'Title', name: 'title'},
 				{label: 'Subject', name: 'subject'},
 				{label: 'Date', name: 'date'},
-				{label: 'Image URL', name: 'image'}
 			]
 		},
 		Team: {
@@ -27,7 +26,6 @@ AdminConfig = {
 				{label: 'Name', name: 'name'},
 				{label: 'Position', name: 'position'},
 				{label: 'Major', name: 'major'},
-				{label: 'Image URL', name: 'image'}
 			]
 		}
 	}
