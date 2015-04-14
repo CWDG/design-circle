@@ -12,7 +12,7 @@ $green: #49A447;
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -75,6 +75,8 @@ body {
 
 .section {
   width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
   float: left;
   padding-bottom: 150px;
   background-color: white;
