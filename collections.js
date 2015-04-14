@@ -1,5 +1,3 @@
-Schemas = {}
-Events = new Mongo.Collection("events");
 Images = new FS.Collection("images", {stores: [new FS.Store.GridFS("images", {})]});
 
 Images.allow({
@@ -17,6 +15,9 @@ Images.allow({
  }
 });
 
+Schemas = {}
+
+Events = new Mongo.Collection("events");
 
 Schemas.Events = new SimpleSchema({
 	title: {
@@ -52,15 +53,15 @@ Schemas.BlogPosts = new SimpleSchema({
 		label: 'Date'
 	},
 	picture: {
-        type: String,
-        autoform: {
-            afFieldInput: {
-                type: 'fileUpload',
-                collection: 'Images'
-								}
-							},
-        label: 'Choose Image'
-			}
+    type: String,
+      autoform: {
+        afFieldInput: {
+          type: 'fileUpload',
+            collection: 'Images'
+					}
+			},
+      label: 'Choose Image'
+	}
 });
 BlogPosts.attachSchema(Schemas.BlogPosts);
 
@@ -68,26 +69,26 @@ Team = new Mongo.Collection("Members");
 
 Schemas.Team = new SimpleSchema({
         name: {
-                type: String,
-                max: 60
+          type: String,
+          max: 60
         },
         position: {
-                type: String,
-             	max:15
+          type: String,
+          max:15
         },
         major: {
-                type: String,
-                max:50
+          type: String,
+          max:50
         },
 				picture: {
-							type: String,
-							autoform: {
-									afFieldInput: {
-											type: 'fileUpload',
-											collection: 'Images'
-											}
-										},
-							label: 'Choose Image'
+					type: String,
+						autoform: {
+							afFieldInput: {
+								type: 'fileUpload',
+								collection: 'Images'
+								}
+						},
+						label: 'Choose Image'
 				}
 });
 Team.attachSchema(Schemas.Team);

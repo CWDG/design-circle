@@ -12,7 +12,7 @@
     <div class="tiles-container blogLanding">
       {{#each recentBlogPosts}}
       <div class="inline">
-				<img class="eventsPhoto" src="{{blogImageView picture}}">
+				<img class="eventsPhoto" src="{{getBlogPostImage picture}}">
         <div class="blogInfo">
           <p style="font-size:18px; line-height:18px;">
             {{title}}
@@ -27,7 +27,7 @@
           niam libus.
         </p>
         </div>
-        <a class="s-link" href="{{href}}">Read More</a>
+        <a class="s-link">Read More</a>
       </div>
       {{/each}}
     </div>

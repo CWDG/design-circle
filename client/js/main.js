@@ -4,6 +4,4 @@ Template.main.rendered = function() {
     $.scrollify({
         section: ".section"
     });
-
-    Meteor.subscribe("images");
 };
