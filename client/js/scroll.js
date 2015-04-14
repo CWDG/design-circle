@@ -11,7 +11,9 @@ Template.main.rendered = function() {
 
         // Get location of selector
         var tOffset = $(selector).position();
-        var sectLeft = tOffset.left;
+        var base = $("#penultimate-container").position().left;
+
+        var sectLeft = (-base) + tOffset.left;
         var sectTop = tOffset.top;
 
         // Debugging
