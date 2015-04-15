@@ -12,7 +12,7 @@ $green: #49A447;
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 body {
@@ -98,6 +98,7 @@ body {
   height: 90vh;
   text-align: center;
   display: table;
+
   width: 100%;
 }
 
