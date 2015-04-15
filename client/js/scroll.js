@@ -21,7 +21,7 @@ Template.main.rendered = function() {
     });
 
     function parallax(selector, image_src, width) {
-        $(selector).before("<div id='parallaxer'></div>");
+        $(selector).before("<div id='parallaxer'></div>")
 
         $('#parallaxer').css('height', '100vh');
         $('#parallaxer').css('position', 'fixed');
@@ -33,16 +33,27 @@ Template.main.rendered = function() {
         $('#parallaxer').css('width', width);
         $('#parallaxer').css('z-index', '-100');
 
-        $('html, body').scroll(function() {
+        $('a[href^=#]').on("click", function() {
             var total_distance = $(selector).width() - $(window).width();
-            var position = -$(selector).position().left;
+
+            var section = $(this).attr('href');
+
+            // Get location of selector
+            var tOffset = $(section).position();
+            var base = $("#penultimate-container").position().left;
+
+            var sectLeft = (-base) + tOffset.left;
+
+            var position = sectLeft;
+
 
             var fraction = position / total_distance;
 
             var overlap = $('#parallaxer').width() - $(window).width();
-            $('#parallaxer').css('left', -(overlap * fraction));
-            console.log(fraction);
-        })
+            $('#parallaxer').animate({
+              left: -(overlap * fraction)
+              }, 'slow', 'easeOutCirc');
+        });
 
         var container_width = $(selector).width();
     }
