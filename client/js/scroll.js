@@ -14,7 +14,7 @@ Template.main.rendered = function() {
             scrollLeft: sectLeft,
             scrollTop: sectTop
         },
-        'slow');
+        'slow', 'easeOutCirc');
 
         // Do not do default action
         return false;

@@ -48,12 +48,12 @@ Template.blog.rendered = function() {
             if (curHeight <= slideHeight) { //expand
                 $blogInfo.animate({
                     height: defHeight
-                }, "fast");
+                }, "slow", 'easeOutElastic');
                 $(this).text("Close");
             } else { //collapse
                 $blogInfo.animate({
                     height: slideHeight
-                }, "fast");
+                }, "slow", 'easeOutElastic');
                 $(this).text("Read More");
             }
             return false;
