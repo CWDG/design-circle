@@ -3,6 +3,8 @@
 
 $green: #49A447;
 
+.section::-webkit-scrollbar { width: 0 !important }
+
 @mixin centerer {
   position: absolute;
   top: 25%;
@@ -76,7 +78,7 @@ body {
 .section {
   width: 100vw;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   float: left;
 
   .content-wrapper {
