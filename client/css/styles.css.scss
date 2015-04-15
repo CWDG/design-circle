@@ -83,6 +83,34 @@ body {
   overflow-y: auto;
   float: left;
 
+  .header {
+    height: 90vh;
+    text-align: center;
+    display: table;
+    width: 100%;
+
+    h1.page-title {
+      font-size: 80px;
+      font-weight: lighter;
+      line-height: 65px;
+
+      margin: 10px 0 10px 0;
+      padding: 0;
+
+      color: white;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .down-caret {
+      position: absolute;
+      bottom: 10vh;
+      padding-bottom: 10px;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
   .content-wrapper {
     background: white;
     min-height: 100vh;      // Make sure can cover screen
@@ -95,14 +123,6 @@ body {
       // @include shift(3);
     }
   }
-}
-
-.header {
-  height: 90vh;
-  text-align: center;
-  display: table;
-
-  width: 100%;
 }
 
 .talk .content,
@@ -175,19 +195,6 @@ body {
   //height: 100px;
   overflow: hidden;
   padding-top: 10px;
-}
-
-h1.page-title {
-  font-size: 80px;
-  font-weight: lighter;
-  line-height: 65px;
-
-  margin: 10px 0 10px 0;
-  padding: 0;
-
-  color: white;
-  display: table-cell;
-  vertical-align: middle;
 }
 
 a {
