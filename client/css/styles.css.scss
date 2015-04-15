@@ -9,10 +9,13 @@ $green: #49A447;
   transform: translateY(-25%);
 }
 
+html {
+  overflow: hidden;
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  overflow: visible;
 }
 
 body {
