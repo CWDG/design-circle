@@ -97,6 +97,8 @@ body {
 .header {
   height: 15vh;
   text-align: center;
+  display: table;
+  width: 100%;
 }
 
 .talk .content,
@@ -179,7 +181,9 @@ h1.page-title {
   margin: 10px 0 10px 0;
   padding: 0;
 
-  color: $green;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 a {
