@@ -37,7 +37,7 @@ Template.blog.rendered = function() {
       $blogInfo.css("height", slideHeight + "px");
 
         //read more link
-        var $readMore = $(this).find(".s-link");
+        var $readMore = $(this).find(".s-link");  //todo: should probably append this link conditionally to avoid useless read more links on very short blog posts
         console.log('readMore:', $readMore.text());
 
         //bind click event to read more link
