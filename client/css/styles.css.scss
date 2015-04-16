@@ -80,7 +80,6 @@ body {
 .section {
   width: 100vw;
   height: 100vh;
-  overflow-y: auto;
   float: left;
 
   .header {
@@ -102,20 +101,17 @@ body {
       vertical-align: middle;
     }
 
-    .down-caret {
-      position: absolute;
-      bottom: 10vh;
-      padding-bottom: 10px;
-      width: auto;
-      margin: 0 auto;
+    .down {
+      cursor: pointer;
     }
   }
 
   .content-wrapper {
+    overflow-y: scroll;
     background: white;
-    min-height: 100vh;      // Make sure can cover screen
+    height: 90vh;
+    margin-bottom: 10vh;   // Compensate for nav bar
     padding-top: 40px;
-    padding-bottom: 10vh;   // Compensate for nav bar
 
     .content {
       @include outer-container();
