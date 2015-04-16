@@ -6,57 +6,9 @@
 
     <div class ="content-wrapper">
       <div class="content">
-        <div class="tiles-container blogLanding">
-          {{#each recentBlogPosts}}
-          <div class='blogPostContainer'>
-            <p style="font-size:2em; line-height:1em;">
-            {{title}}
-            <span style="font-size:14px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
-            </p>
-            <img class="eventsPhoto" src="{{getBlogPostImage picture}}" />
-            <div class="blogInfo">
-              <p style="font-size:14px; line-height:10px;">{{date}}</p>
-              <p>Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.
-              Nist, venderatur? Oditam, vel ipis
-              experiberepe porestistio omnihiti con
-              core. Natus, cor aut et adis autem inctotate
-              niam libus.
-              </p>
-            </div>
-            <a class="s-link" href="{{href}}">Read More</a>
-            <br>
-            <br>
-          </div>
-          {{/each}}
-        </div>
+
+        {{> posts}}
+
         {{#if loadBlogArchive}}
         {{> blogArchive}}
         {{/if}}
@@ -65,5 +17,59 @@
         </div>
       </div>
     </div>
+  </div>
+</template>
+
+<template name="posts">
+  <div class="tiles-container blogLanding">
+    {{#each recentBlogPosts}}
+    <div class='blogPostContainer'>
+      <p style="font-size:2em; line-height:1em;">
+      {{title}}
+      <span style="font-size:14px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
+      </p>
+      <img class="eventsPhoto" src="{{getBlogPostImage picture}}" />
+      <div class="blogInfo">
+        <p style="font-size:14px; line-height:10px;">{{date}}</p>
+        <p>Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.
+        Nist, venderatur? Oditam, vel ipis
+        experiberepe porestistio omnihiti con
+        core. Natus, cor aut et adis autem inctotate
+        niam libus.
+        </p>
+      </div>
+      <a class="s-link" href="{{href}}">Read More</a>
+      <br>
+      <br>
+    </div>
+    {{/each}}
   </div>
 </template>

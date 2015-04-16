@@ -1,9 +1,7 @@
 Meteor.subscribe("blogposts");
 Meteor.subscribe("images");
 
-
-
-Template.blog.helpers({
+Template.posts.helpers({
     recentBlogPosts: function() {
         return BlogPosts.find({}, {sort: {date: -1}});
     },
@@ -14,7 +12,7 @@ Template.blog.helpers({
     }
 });
 
-Template.blog.rendered = function() {
+Template.posts.rendered = function() {
 
   //height of collapsed slider
   var slideHeight = 110;
