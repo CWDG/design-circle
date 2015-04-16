@@ -1,12 +1,15 @@
 <template name="team_members">
  <div id="team" class="section team">
+   <section class="header">
+     <h1 class="page-title">The Team</h1>
+   </section>
+
     <div class ="content-wrapper">
       <div class="content">
-        <h1 class="page-title">The Team</h1>
         <div class="tiles-container">
          {{#each teamMembers}}
 	   <div class="inline">
-            <img class='memberPhoto' src='/img/teamMember.png' />
+            <img class='memberPhoto' src="{{getTeamMemberImage picture}}" />
             <div class='memberInfo'>
               {{name}}
               <br />

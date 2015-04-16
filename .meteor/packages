@@ -18,3 +18,8 @@ fortawesome:fontawesome
 twbs:bootstrap
 accounts-ui
 aldeed:collection2
+benjaminrh:event-hooks
+cfs:standard-packages
+cfs:gridfs
+aldeed:autoform
+yogiben:autoform-file

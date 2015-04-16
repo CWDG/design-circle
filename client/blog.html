@@ -1,63 +1,69 @@
 <template name="blog">
   <div id="blog" class="section blog">
+    <section class="header">
+      <h1 class="page-title">Blog</h1>
+    </section>
+
     <div class ="content-wrapper">
-      {{>blogLanding}}
-    </div>
-  </div>
-</template>
-
-<template name="blogLanding">
-  <div class="content">
-    <h1 class="page-title">{{blogSectionHeader}}</h1>
-    <div class="tiles-container blogLanding">
-      {{#each recentBlogPosts}}
-      <div class="inline">
-        <img class="eventsPhoto" src="/img/eventsPhoto.png" />
-        <div class="blogInfo">
-          <p style="font-size:18px; line-height:18px;">
+      <div class="content">
+        <div class="tiles-container blogLanding">
+          {{#each recentBlogPosts}}
+          <div class='blogPostContainer'>
+            <p style="font-size:2em; line-height:1em;">
             {{title}}
-            <span style="font-size:10px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
-          </p>
-          <p syle="font-size:14px; line-height:10px;">{{date}}</p>
-          <p>Natus, cor aut et adis autem inctotate
-          niam libus.
-          Nist, venderatur? Oditam, vel ipis
-          experiberepe porestistio omnihiti con
-          core. Natus, cor aut et adis autem inctotate
-          niam libus.
-        </p>
+            <span style="font-size:14px; color:white; background-color:gray; padding: 3px; border-radius:5px;">{{subject}}</span>
+            </p>
+            <img class="eventsPhoto" src="{{getBlogPostImage picture}}" />
+            <div class="blogInfo">
+              <p style="font-size:14px; line-height:10px;">{{date}}</p>
+              <p>Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.
+              Nist, venderatur? Oditam, vel ipis
+              experiberepe porestistio omnihiti con
+              core. Natus, cor aut et adis autem inctotate
+              niam libus.
+              </p>
+            </div>
+            <a class="s-link" href="{{href}}">Read More</a>
+            <br>
+            <br>
+          </div>
+          {{/each}}
         </div>
-        <a class="s-link" href="{{href}}">Read More</a>
+        {{#if loadBlogArchive}}
+        {{> blogArchive}}
+        {{/if}}
+        <div class="b-link">
+          <a class="b-link" id="blogArchiveLink">{{{archiveLinkText}}}</a>
+        </div>
       </div>
-      {{/each}}
-    </div>
-    {{#if loadBlogArchive}}
-      {{> blogArchive}}
-    {{/if}}
-    <div class="b-link">
-      <a class="b-link" id="blogArchiveLink">{{{archiveLinkText}}}</a>
-    </div>
-  </div>
-</template>
-
-<template name="blogArchive">
-  <h2 id="blogArchiveHeader" style="text-align:right; padding-right:20px; margin-top:-30px; color:dimgray">Archive</h2>
-  <div class="tiles-container blogArchive">
-    <div class="CSSTableGenerator">
-      <table>
-        <tr>
-          <td>Title</td>
-          <td>Subject</td>
-          <td>Date Created</td>
-        </tr>
-        {{#each blogPosts}}
-          <tr>
-            <td><a href={{href}} style="font-weight:bold">{{title}}</a></td>
-            <td>{{subject}}</td>
-            <td>{{date}}</td>
-          </tr>
-        {{/each}}
-      </table>
     </div>
   </div>
 </template>

@@ -1,15 +1,13 @@
 <template name="titlepage">
-	<div id="top" class="section ex2">
-		<div style="z-index:2; background-color: white; width: 200px; height: 25px; text-align: center; position: fixed; border: solid grey; border-width: 0 1px 1px 0; border-radius: 0 0 10px 0;" id="top-panel">
-			{{> loginButtons}}
-		</div>
-		<div class ="content-wrapper">
-			<div class="content">
-				<div class="text-center">
-					<h1 class="main-title"><b>D</b>esign <b>C</b>ircle</h1>
-					<img class="dc-logo" alt="Design Circle" src="/img/dc_invert.png">
-				</div>
-			</div>
-		</div>
-	</div>
+  <div id="top" class="section title">
+    <div class="login-buttons">
+      {{> loginButtons}}
+    </div>
+    <section class="header">
+      <div class="text-center">
+        <h1 class="main-title"><b>D</b>esign <b>C</b>ircle</h1>
+        <img class="dc-logo" alt="Design Circle" src="/img/dc_invert.png">
+      </div>
+    </section>
+  </div>
 </template>
