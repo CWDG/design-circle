@@ -1,4 +1,4 @@
-<template name="blog">
+<template name="blogPosts">
   <div id="blog" class="section blog">
     <section class="header">
       <h1 class="page-title">Blog</h1>
@@ -6,14 +6,15 @@
 
     <div class ="content-wrapper">
       <div class="content">
-        {{> posts}}
+        <div class="tiles-container blogLanding">
+          {{> pages}}
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <template name="posts">
-  <div class="tiles-container blogLanding">
     {{#each recentBlogPosts}}
     <div class='blogPostContainer'>
       <p style="font-size:2em; line-height:1em;">
@@ -63,5 +64,4 @@
       <br>
     </div>
     {{/each}}
-  </div>
 </template>

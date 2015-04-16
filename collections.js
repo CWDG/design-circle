@@ -92,3 +92,17 @@ Schemas.Team = new SimpleSchema({
 				}
 });
 Team.attachSchema(Schemas.Team);
+
+Pages = new Meteor.Pagination(BlogPosts, {
+  itemTemplate: "posts",
+  debug: true,
+  availableSettings: {
+    limit: true,
+    sort: true,
+  },
+  infinite: true,
+  infiniteTrigger: .9,
+  infiniteRateLimit: 1,
+  infiniteStep: 1,
+  perPage: 1,
+});
