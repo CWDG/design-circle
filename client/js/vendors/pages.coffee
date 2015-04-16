@@ -32,6 +32,7 @@
     fastRender: [false, Boolean, false]
     homeRoute: [false, Match.OneOf(String, Array, Boolean), "/"]
     infinite: [false, Boolean, false]
+    infiniteCont: [false, String, window]
     infiniteItemsLimit: [false, Number, Infinity]
     infiniteTrigger: [false, Number, .9]
     infiniteRateLimit: [false, Number, 1]
@@ -795,7 +796,7 @@
       @sess "currentPage", n
 
   setInfiniteTrigger: ->
-    $(window).scroll _.bind (
+    $(@infiniteCont).scroll _.bind (
       _.throttle ->
         t = @infiniteTrigger
         oh = document.body.offsetHeight

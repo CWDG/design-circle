@@ -1,7 +1,7 @@
 <template name="blogPosts">
   <div id="blog" class="section blog">
     <section class="header">
-      <h1 class="page-title">Blog<br/><span class="down">&or;</span></h1>
+      <h1 class="page-title">Blog<br/><span class="down" id="blogDownArrow">&or;</span></h1>
     </section>
 
     <div class ="content-wrapper">
@@ -15,7 +15,6 @@
 </template>
 
 <template name="posts">
-    {{#each recentBlogPosts}}
     <div class='blogPostContainer'>
       <p style="font-size:2em; line-height:1em;">
       {{title}}
@@ -59,9 +58,8 @@
         niam libus.
         </p>
       </div>
-      <a class="s-link" href="{{href}}">Read More</a>
+      <a class="s-link">Read More</a>
       <br>
       <br>
     </div>
-    {{/each}}
 </template>
