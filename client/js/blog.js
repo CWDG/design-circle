@@ -1,7 +1,47 @@
-Meteor.subscribe("blogposts");
+Meteor.subscribe("blogPosts");
 Meteor.subscribe("images");
 
+incrementLimit = function(inc) {
+  newLimit = Session.get('limit') + inc;
+  Session.set('limit', newLimit);
+}
+
+Template.posts.created = function() {
+  Session.setDefault('limit', 2);
+
+  Deps.autorun(function() {
+    Meteor.subscribe('blogPosts', Session.get('limit'));
+  });
+}
+
+Template.posts.rendered = function() {
+  $(window).scroll(function() {
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+      incrementLimit();
+    }
+  });
+}
+
+Template.posts.events({
+  'click .load-more-posts': function(evt) {
+    incrementLimit(2);
+  }
+});
+
 Template.posts.helpers({
+  recentBlogPosts: function() {
+    return BlogPosts.find({ }, { limit: Session.get('limit'), sort: {date: -1} });
+  },
+  getBlogPostImage: function(imageId) {
+    if (Images.findOne(imageId) !== undefined) {
+      return Images.findOne(imageId).url();
+    }
+  }
+});
+
+/////////////////////////////////////////
+
+/*Template.posts.helpers({
     recentBlogPosts: function() {
         return BlogPosts.find({}, {sort: {date: -1}});
     },
@@ -10,7 +50,7 @@ Template.posts.helpers({
         return Images.findOne(imageId).url();
       }
     }
-});
+});*/
 
 Template.posts.rendered = function() {
 

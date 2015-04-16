@@ -2,8 +2,12 @@ Meteor.publish("events", function() {
 	return Events.find();
 });
 
-Meteor.publish("blogposts", function() {
-	return BlogPosts.find();
+Meteor.publish("blogPosts", function(limit) {
+	if (limit > BlogPosts.find().count()) {
+    limit = 0;
+  }
+
+  return BlogPosts.find({ }, { limit: limit });
 });
 
 Meteor.publish("Members",function() {
