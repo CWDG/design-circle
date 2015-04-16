@@ -59,4 +59,12 @@ Template.main.rendered = function() {
     }
 
     parallax('#penultimate-container', '/img/cat2.jpg', 3000);
+
+    $(".down").click(function() {
+        console.log("Down!");
+        var new_top = $(this).parents(".section").children(".content-wrapper").position().top;
+        $('html,body').animate({
+            scrollTop: new_top
+        }, 'slow');
+    })
 }
