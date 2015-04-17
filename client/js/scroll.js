@@ -1,4 +1,15 @@
 Template.main.rendered = function() {
+
+    function showDownArrows() {
+      $('.down').delay(800).animate({
+        opacity: 1
+        }, 'slow');
+    }
+
+    function hideDownArrows() {
+      $('.down').animate({ opacity: 0 }, 'slow');
+    }
+
     $('a[href^=#]').on("click", function() {
         var selector = $(this).attr('href');
 
@@ -9,16 +20,18 @@ Template.main.rendered = function() {
         var sectLeft = (-base) + tOffset.left;
         var sectTop = tOffset.top;
 
+        $('.down').css('opacity', 0); //hide arrows before scrolling
         // Navigate
         $('html, body').animate({
             scrollLeft: sectLeft,
             scrollTop: sectTop
-        },
-        'slow', 'easeOutCirc');
+        }, 'slow', 'easeOutCirc', showDownArrows() );
 
         // Do not do default action
         return false;
     });
+
+    $('.brandImage').parent().on('click', console.log('clicked logo'));
 
     function parallax(selector, image_src, width) {
         $(selector).before("<div id='parallaxer'></div>")
@@ -62,6 +75,7 @@ Template.main.rendered = function() {
 
     $(".down").click(function() {
         console.log("Down!");
+        hideDownArrows();
         var new_top = $(this).parents(".section").children(".content-wrapper").position().top;
         $('html,body').animate({
             scrollTop: new_top
