@@ -31,8 +31,6 @@ Template.main.rendered = function() {
         return false;
     });
 
-    $('.brandImage').parent().on('click', console.log('clicked logo'));
-
     function parallax(selector, image_src, width) {
         $(selector).before("<div id='parallaxer'></div>")
 
