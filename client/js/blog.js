@@ -65,7 +65,7 @@ Template.posts.helpers({
                   $blogInfo.animate({
                       height: defHeight
                   }, 'slow', 'easeOutQuart');
-                  $(this).parent().find('.slider-gradient').fadeOut('slow');
+                  $(this).parent().parent().find('.slider-gradient').fadeOut('slow');
                   $(this).text("Close");
               }
 
@@ -73,7 +73,7 @@ Template.posts.helpers({
                   $blogInfo.animate({
                       height: slideHeight
                   }, 'slow', 'easeOutQuart');
-                  $(this).parent().find('.slider-gradient').fadeIn('slow');
+                  $(this).parent().parent().find('.slider-gradient').fadeIn('slow');
                   $(this).text("Read More");
               }
 

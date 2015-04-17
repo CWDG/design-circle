@@ -227,9 +227,17 @@ a.b-link {
   font-weight: bold;
 }
 
+.s-link-wrapper {
+  height: 30px;
+}
+
 a.s-link {
   font-size: 1.2em;
-
+  line-height: 1.5em;
+  &:hover {
+    font-size: 1.3em;
+    text-decoration: none;
+  }
 }
 
 .contactFormContainer, .contactFormImage {
