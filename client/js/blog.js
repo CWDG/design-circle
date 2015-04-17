@@ -14,13 +14,11 @@ Template.posts.created = function() {
   });
 }
 
+/*
 Template.posts.rendered = function() {
-  $(window).scroll(function() {
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-      incrementLimit();
-    }
-  });
+
 }
+*/
 
 Template.posts.events({
   'click .load-more-posts': function(evt) {
@@ -36,66 +34,54 @@ Template.posts.helpers({
     if (Images.findOne(imageId) !== undefined) {
       return Images.findOne(imageId).url();
     }
-  }
-});
+  },
+  applySlider: function() {
 
-/////////////////////////////////////////
+    function doApplySlider() {
 
-/*Template.posts.helpers({
-    recentBlogPosts: function() {
-        return BlogPosts.find({}, {sort: {date: -1}});
-    },
-    getBlogPostImage: function(imageId) {
-      if (Images.findOne(imageId) !== undefined) {
-        return Images.findOne(imageId).url();
-      }
-    }
-});*/
+      var slideHeight = 110; //height of collapsed slider
 
-Template.posts.rendered = function() {
+      $(".blogPostContainer").each(function() { //TODO: figure out a way to run this ONLY on newly loaded blog posts instead of all of them
 
-  //height of collapsed slider
-  var slideHeight = 110;
+        var $blogInfo = $(this).children(".blogInfo");
+        var defHeight = $blogInfo.height();
+        var $readMoreLink = $(this).find(".s-link");  //TODO: should probably append this link conditionally to avoid useless read more links on very short blog posts
 
-  $(".blogPostContainer").each(function() {
+        console.log('defHeight:', defHeight);
+        console.log('slideHeight:', slideHeight);
 
-    //Date and blog post text
-    var $blogInfo = $(this).children(".blogInfo");
+        if (defHeight >= slideHeight) {
 
-    //Height of blog info div
-    var defHeight = $blogInfo.height();
+          //set blog info height to collapsed height
+          $blogInfo.css("height", slideHeight + "px");
 
-    //debugging
-    console.log('defHeight:', defHeight);
-    console.log('slideHeight:', slideHeight);
+          //bind click event to read more link
+          $readMoreLink.bind('click', function(event) {
 
-    if (defHeight >= slideHeight) {
+            var curHeight = $blogInfo.height();
+            console.log('curHeight:', $blogInfo.height());
 
-      //set blog info height to collapsed height
-      $blogInfo.css("height", slideHeight + "px");
+              if (curHeight <= slideHeight) { //expand
+                  $blogInfo.animate({
+                      height: defHeight
+                  }, "slow", 'easeOutElastic');
+                  $(this).text("Close");
+              }
 
-        //read more link
-        var $readMore = $(this).find(".s-link");  //todo: should probably append this link conditionally to avoid useless read more links on very short blog posts
-        console.log('readMore:', $readMore.text());
+              else { //collapse
+                  $blogInfo.animate({
+                      height: slideHeight
+                  }, "slow", 'easeOutElastic');
+                  $(this).text("Read More");
+              }
 
-        //bind click event to read more link
-        $readMore.bind('click', function(event) {
-          var curHeight = $blogInfo.height();
-          console.log('curHeight:', $blogInfo.height());
-          console.log('clicked read more!');
-            if (curHeight <= slideHeight) { //expand
-                $blogInfo.animate({
-                    height: defHeight
-                }, "slow", 'easeOutElastic');
-                $(this).text("Close");
-            } else { //collapse
-                $blogInfo.animate({
-                    height: slideHeight
-                }, "slow", 'easeOutElastic');
-                $(this).text("Read More");
-            }
-            return false;
+              return false;
+            });
+          }
         });
-    }
-  });
-}
+      }
+
+      setTimeout(doApplySlider, 500); //delay execution to ensure the DOM is fully updated
+  }
+
+});
