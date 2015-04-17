@@ -15,6 +15,7 @@
 </template>
 
 <template name="posts">
+    {{#momentum plugin='fade'}}
     {{#each recentBlogPosts}}
     <div class='blogPostContainer'>
       <p style="font-size:2em; line-height:1em;">
@@ -64,5 +65,6 @@
       <br>
     </div>
     {{/each}}
+    {{/momentum}}
     <button class="load-more-posts">Load More Posts</button>
 </template>
