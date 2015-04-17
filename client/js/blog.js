@@ -64,14 +64,16 @@ Template.posts.helpers({
               if (curHeight <= slideHeight) { //expand
                   $blogInfo.animate({
                       height: defHeight
-                  }, "slow", 'easeOutElastic');
+                  }, 'slow', 'easeOutQuart');
+                  $(this).parent().find('.slider-gradient').fadeOut('slow');
                   $(this).text("Close");
               }
 
               else { //collapse
                   $blogInfo.animate({
                       height: slideHeight
-                  }, "slow", 'easeOutElastic');
+                  }, 'slow', 'easeOutQuart');
+                  $(this).parent().find('.slider-gradient').fadeIn('slow');
                   $(this).text("Read More");
               }
 
