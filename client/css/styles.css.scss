@@ -245,7 +245,7 @@ a.s-link {
 }
 
 .contactFormContainer {
-  font-size: .9em;
+  font-size: 1em;
 }
 
 label {
@@ -257,16 +257,18 @@ label {
 
 input, textarea {
   border: $green 1px solid;
+  color: dimgray;
+  padding: 5px;
 }
 
 textarea#contactMessage {
   width: 90%;
-  height: 90px;
+  height: 170px;
 }
 
 input#contactFullName, input#contactAffiliation, input#contactEmail {
   width: 70%;
-  height: 20px;
+  height: 30px;
 
 }
 
