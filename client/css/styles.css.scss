@@ -319,7 +319,11 @@ input#contactFormSubmit {
 }
 
 .text-center {
+  width: 100%;
+  height: 100%;
   color: white;
+  display: table-cell;
+  vertical-align: middle;
 
   .dc-logo {
     margin-top: 30px;
