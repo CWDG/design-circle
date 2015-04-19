@@ -110,29 +110,48 @@ Template.main.rendered = function() {
       var base = $("#penultimate-container").position().left;
 
       var sectLeft = (-base) + tOffset.left;
-      var blurred;
 
+      //Get new position of content section (top border)
       contentTop = $('body').position().top + $(window).height();
 
+      var blurred;
+
+      //User is viewing content of a section
       if( viewingContent ) {
         currentPosY = contentTop;
+
+        //on initial resize (only do once)
+        if(!blurred) {
+          blurElement('.content-wrapper', 25, 0, .25);
+          $('#penultimate-container').after("<div class='resizeNotification'><h3>Just a moment</h3>Finding your place...</div>");
+          blurred = true;
+        }
+
+        setTimeout(function() { //timeout reduces lag
+          //reposition, remove blur and resize notification
+          $('html, body').stop(true, true).animate({
+            scrollLeft: sectLeft,
+            scrollTop: currentPosY
+          }, 800, 'easeOutQuint', function() {
+            blurElement('.content-wrapper', 0, 400, 1)
+            blurred = false;
+            $('.resizeNotification').fadeOut('slow');
+            });
+        }, 400);
+
       }
+      //User is viewing header section
       else {
         currentPosY = headerTop;
+        //reposition
+        $('html, body').stop(true, true).animate({
+          scrollLeft: sectLeft,
+          scrollTop: currentPosY
+        }, 600, 'easeOutQuint');
       }
 
-      if(!blurred) {
-        blurElement('.content-wrapper', 15, 0, .95);
-        blurred = true;
-      }
 
-      $('html, body').stop(true, true).animate({
-        scrollLeft: sectLeft,
-        scrollTop: currentPosY
-      }, 800, 'easeOutQuint', function() {
-        blurElement('.content-wrapper', 0, 800, 1)
-        blurred = false;
-        });
+
 
     }
 
