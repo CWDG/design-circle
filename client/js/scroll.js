@@ -110,6 +110,7 @@ Template.main.rendered = function() {
       var base = $("#penultimate-container").position().left;
 
       var sectLeft = (-base) + tOffset.left;
+      var blurred;
 
       contentTop = $('body').position().top + $(window).height();
 
@@ -120,12 +121,18 @@ Template.main.rendered = function() {
         currentPosY = headerTop;
       }
 
-      blurElement('.content-wrapper', 15, 0, .95);
+      if(!blurred) {
+        blurElement('.content-wrapper', 15, 0, .95);
+        blurred = true;
+      }
 
       $('html, body').stop(true, true).animate({
         scrollLeft: sectLeft,
         scrollTop: currentPosY
-      }, 800, 'easeOutQuint', blurElement('.content-wrapper', 0, 400, 1));
+      }, 800, 'easeOutQuint', function() {
+        blurElement('.content-wrapper', 0, 800, 1)
+        blurred = false;
+        });
 
     }
 
