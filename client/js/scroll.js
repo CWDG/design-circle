@@ -1,3 +1,5 @@
+
+
 Template.main.rendered = function() {
 
       var currentSection;
@@ -116,6 +118,11 @@ Template.main.rendered = function() {
 
       var blurred;
 
+      if(this.resizeTO) clearTimeout(this.resizeTO);
+        this.resizeTO = setTimeout(function() {
+            $(this).trigger('resizeEnd');
+        }, 800);
+
       //User is viewing content of a section
       if( viewingContent ) {
         currentPosY = contentTop;
@@ -123,8 +130,8 @@ Template.main.rendered = function() {
         //on initial resize (only do once)
         if(!blurred) {
           blurElement('.content-wrapper', 25, 0, .25);
-          $('#penultimate-container').after("<div class='resizeNotification'><h3>Just a moment</h3>Finding your place...</div>");
           blurred = true;
+          $('.resizeNotification').stop().fadeIn('fast');
         }
 
         setTimeout(function() { //timeout reduces lag
@@ -135,9 +142,9 @@ Template.main.rendered = function() {
           }, 800, 'easeOutQuint', function() {
             blurElement('.content-wrapper', 0, 400, 1)
             blurred = false;
-            $('.resizeNotification').fadeOut('slow');
             });
         }, 400);
+
 
       }
       //User is viewing header section
@@ -149,17 +156,22 @@ Template.main.rendered = function() {
           scrollTop: currentPosY
         }, 600, 'easeOutQuint');
       }
-
-
-
-
     }
+
 
     parallax('#penultimate-container', '/img/cat2.jpg', 3000);
 
-    $(window).on('resize', repositionPage);
+    $(window).on('resize', repositionPage).bind('resizeEnd', function() {
+      $('.resizeNotification').stop().fadeOut('slow');
+    });
 
     $('a[href^=#]').on("click", autoScroll);
 
     $(".down").click(viewContent);
+}
+
+Template.resizeNotification.rendered = function() {
+
+  $('.resizeNotification').hide().css('opacity', 1);
+
 }
