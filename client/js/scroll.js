@@ -129,9 +129,9 @@ Template.main.rendered = function() {
 
         //on initial resize (only do once)
         if(!blurred) {
-          blurElement('.content-wrapper', 25, 0, .25);
-          blurred = true;
           $('.resizeNotification').stop().fadeIn('fast');
+          blurElement('.content-wrapper', 25, 0, .4);
+          blurred = true;
         }
 
         setTimeout(function() { //timeout reduces lag
