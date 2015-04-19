@@ -125,10 +125,7 @@ Template.main.rendered = function() {
       $('html, body').stop(true, true).animate({
         scrollLeft: sectLeft,
         scrollTop: currentPosY
-      }, 400, 'easeOutQuint', function() {
-        showDownArrows();
-        blurElement('.content-wrapper', 0, 400, 1);
-      });
+      }, 800, 'easeOutQuint', blurElement('.content-wrapper', 0, 400, 1));
 
     }
 
