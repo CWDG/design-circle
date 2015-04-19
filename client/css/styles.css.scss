@@ -133,8 +133,8 @@ body {
     background: white;
     height: 90vh;
     margin-bottom: 10vh;   // Compensate for nav bar
-    padding-top: 40px;
-
+    padding: 50px;
+    
     .content {
       @include outer-container();
       // @include span-columns(6);
