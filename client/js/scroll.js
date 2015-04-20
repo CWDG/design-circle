@@ -105,6 +105,8 @@ Template.main.rendered = function() {
       }, 'slow');
     }
 
+    /* -----old resize animation ------
+
     function repositionPage() {
       var selector = currentSection;
       // Get location of selector
@@ -156,14 +158,81 @@ Template.main.rendered = function() {
           scrollTop: currentPosY
         }, 600, 'easeOutQuint');
       }
-    }
+    }*/
 
 
     parallax('#penultimate-container', '/img/cat2.jpg', 3000);
 
-    $(window).on('resize', repositionPage).bind('resizeEnd', function() {
-      $('.resizeNotification').stop().fadeOut('slow');
-    });
+    var sectionOrigLeft;
+    var windowWidthStart;
+    var currentSectionClassName;
+
+    $(window).on('resize', function() {
+              //recalculate top position of content
+        contentTop = $('body').position().top + $(window).height();
+
+        currentSectionClassName = currentSection.split('#')[1];
+        var $section = $('.' + currentSectionClassName);
+        var tOffset = $section.position();
+        var base = $("#penultimate-container").position().left;
+
+        if(tOffset.left !== 0) {
+          sectionOrigLeft = (-base) + tOffset.left;
+          windowWidthStart = $(window).width();
+        }
+
+        if( viewingContent ) {
+          currentPosY = contentTop;
+          $section.find('.header').hide();
+        }
+        else {
+          currentPosY = headerTop;
+        }
+
+        //position current section inside the window and hide all other sections
+        $('.section').each(function() {
+          if( $(this).attr('class') !== $section.attr('class') ) {
+            $(this).hide();
+          }
+          else {
+            $(this).addClass('positionTopLeft');
+          }
+        });
+
+        //trigger resize end event after 800ms of no change in window size
+        if(this.resizeTO) clearTimeout(this.resizeTO);
+          this.resizeTO = setTimeout(function() {
+              $(this).trigger('resizeEnd');
+          }, 800);
+
+
+
+    }).bind('resizeEnd', function() {
+      var windowWidthEnd = $(window).width();
+      var deltaWindowWidth = windowWidthEnd - windowWidthStart;
+
+      function sectIndex() {
+        if (currentSection == '#about') {return 1}
+        //team??
+        else if( currentSection == '#events') { return 3 }
+        else if( currentSection == '#blog' ) { return 4 }
+        else if( currentSection == '#talk' ) { return 5 }
+        else { return null }
+      }
+
+      //horizontal offset after resize equals the change in window width times the number of preceeding sections since the width of each section increases
+      var deltaSectOffset = sectIndex()*deltaWindowWidth
+
+      //display all sections and headers and remove resize positioning
+      $('.header').show();
+      $('.section').show().removeClass('positionTopLeft');
+
+      //jump to new section position after restoration of all sections
+      $('html, body')
+        .scrollTop(currentPosY)
+        .scrollLeft(sectionOrigLeft + deltaSectOffset);
+
+   });
 
     $('a[href^=#]').on("click", autoScroll);
 
