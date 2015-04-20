@@ -216,7 +216,7 @@ Template.main.rendered = function() {
         //team??
         else if( currentSection == '#events') { return 3 }
         else if( currentSection == '#blog' ) { return 4 }
-        else if( currentSection == '#talk' ) { return 5 }
+        else if( currentSection == '#contact' ) { return 5 }
         else { return null }
       }
 

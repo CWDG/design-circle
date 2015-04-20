@@ -184,7 +184,7 @@ body {
   left: 0;
 }
 
-.talk .content,
+.contact .content,
 .about .content {
   // @include span-columns(7);
 }
@@ -206,10 +206,10 @@ body {
 }
 
 /* Talk inlines */
-.talk .inline.contactFormContainer {
+.contact .inline.contactFormContainer {
   @include span-columns(7);
 }
-.talk .inline.contactFormImage {
+.contact .inline.contactFormImage {
   @include span-columns(5);
 
   img {
