@@ -70,7 +70,8 @@ Schemas.BlogPosts = new SimpleSchema({
             collection: 'Images'
 					}
 			},
-      label: 'Choose Image'
+      label: 'Choose Image',
+      optional: true
 	}
 });
 BlogPosts.attachSchema(Schemas.BlogPosts);

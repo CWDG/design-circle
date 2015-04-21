@@ -28,6 +28,9 @@ AdminConfig = {
 				{label: 'Major', name: 'major'},
 			]
 		}
+	},
+	autoForm: {
+		omitFields: ['date']
 	}
 };
 
