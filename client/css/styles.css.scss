@@ -103,6 +103,11 @@ body {
 
     .down {
       cursor: pointer;
+      position: absolute;
+      top: 70vh;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 40px;
     }
   }
 
