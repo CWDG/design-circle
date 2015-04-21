@@ -23,4 +23,4 @@ cfs:standard-packages
 cfs:gridfs
 aldeed:autoform
 yogiben:autoform-file
-alethes:pages
+percolate:momentum

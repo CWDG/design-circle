@@ -1,21 +1,28 @@
 <template name="navbar">
 	<nav class="main-nav dc-green-background">
 		<div class="vertically-centered">
-			<a href="#top"><img class="brand_image" src="/img/dc_invert.png" alt="Design Circle Logo" /></a>
-			<ul>
-				<li><a id="about-link" href="#about">About</a></li>
-				<li><a id="events-link" href="#events">Events</a></li>
-				<li><a id="news-link" href="#blog">Blog</a></li>
-				<li><a id="contact-link" href="#contact">Contact</a></li>
+			<div class="navContainer page-links-container">
+				<div class="menu-item"><a href="#top"><img class="brand_image" src="/img/dc_invert.png" alt="Design Circle Logo" /></a></div>
+				<div class="menu-item"><a id="about-link" href="#about">About</a></div>
+				<div class="menu-item"><a id="events-link" href="#events">Events</a></div>
+				<div class="menu-item"><a id="news-link" href="#blog">Blog</a></div>
+				<div class="menu-item"><a id="contact-link" href="#contact">Contact</a></div>
 				{{#if isAdmin}}
-				<li><a href="/admin">Admin</a></li>
+				<div class="menu-item"><a href="/admin">Admin</a></div>
 				{{/if}}
-				<li>
-				<a class="social-media-button" href="https://www.facebook.com/pages/The-Ohio-State-Design-Circle/363132557110274" target="_blank"><img src="/img/social_media/Facebook.png"></a>
-				<a class="social-media-button" href="https://twitter.com/design_circle" target="_blank"><img src="/img/social_media/Twitter.png"></a>
-				<a class="social-media-button" href="http://instagram.com/osudesigncircle/" target="_blank"><img src="/img/social_media/Instagram.png"></a>
-				</li>
-			</ul>
+
+			</div>
+			<div class="navContainer social-media-container">
+				<div class="menu-item">
+					<a class="social-media-button" href="https://www.facebook.com/pages/The-Ohio-State-Design-Circle/363132557110274" target="_blank"><img src="/img/social_media/Facebook.png"></a>
+				</div>
+				<div class="menu-item">
+					<a class="social-media-button" href="https://twitter.com/design_circle" target="_blank"><img src="/img/social_media/Twitter.png"></a>
+				</div>
+				<div class="menu-item">
+					<a class="social-media-button" href="http://instagram.com/osudesigncircle/" target="_blank"><img src="/img/social_media/Instagram.png"></a>
+				</div>
+			</div>
 		</div>
 	</nav>
 </template>

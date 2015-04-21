@@ -1,4 +1,4 @@
-<template name="blog">
+<template name="blogPosts">
   <div id="blog" class="section blog">
     <section class="header">
       <h1 class="page-title">Blog<br/><span class="down fa fa-chevron-down"></span></h1>
@@ -6,14 +6,16 @@
 
     <div class ="content-wrapper">
       <div class="content">
-        {{> posts}}
+        <div class="tiles-container blogLanding">
+          {{> posts}}
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <template name="posts">
-  <div class="tiles-container blogLanding">
+    {{#momentum plugin='fade'}}
     {{#each recentBlogPosts}}
     <div class='blogPostContainer'>
       <p style="font-size:2em; line-height:1em;">
@@ -34,7 +36,7 @@
         experiberepe porestistio omnihiti con
         core. Natus, cor aut et adis autem inctotate
         niam libus.Natus, cor aut et adis autem inctotate
-        niam libus.
+        niam libus. <br><br>
         Nist, venderatur? Oditam, vel ipis
         experiberepe porestistio omnihiti con
         core. Natus, cor aut et adis autem inctotate
@@ -51,17 +53,22 @@
         Nist, venderatur? Oditam, vel ipis
         experiberepe porestistio omnihiti con
         core. Natus, cor aut et adis autem inctotate
-        niam libus.
+        niam libus.<br><br>
         Nist, venderatur? Oditam, vel ipis
         experiberepe porestistio omnihiti con
         core. Natus, cor aut et adis autem inctotate
         niam libus.
         </p>
       </div>
-      <a class="s-link" href="{{href}}">Read More</a>
+      <div class="slider-gradient"></div>
+      <div class=s-link-wrapper>
+        <a class="s-link">Read More</a>
+      </div>
       <br>
       <br>
     </div>
+    {{applySlider}}
     {{/each}}
-  </div>
+    {{/momentum}}
+    <button class="load-more-posts">Load More Posts</button>
 </template>
