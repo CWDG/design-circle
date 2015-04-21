@@ -1,4 +1,5 @@
-Template.main.rendered = function() {
+if (!window.matchMedia('only screen and (max-device-width: 480px)').matches) {
+	Template.main.rendered = function() {
     $('a[href^=#]').on("click", function() {
         var selector = $(this).attr('href');
 
@@ -59,4 +60,5 @@ Template.main.rendered = function() {
     }
 
     parallax('#penultimate-container', '/img/cat2.jpg', 3000);
+	}
 }

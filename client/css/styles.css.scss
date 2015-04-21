@@ -453,4 +453,19 @@ input#contactFormSubmit {
 	.blog .inline {
 		@include span-columns(12);
 	}
+
+	.section.title {
+		background: #B7B7B7 center center no-repeat fixed url(/img/cat2.jpg);
+		background-size: cover;
+		height: 100%;
+	}
+
+	#penultimate-container {
+		width: 100vw;
+	}
+
+	.section {
+		display: inline-block;
+		float: none;
+	}
 }
