@@ -17,18 +17,18 @@ Template.main.rendered = function() {
       }
 
       function blurElement(element, size, blurDuration, fadeValue) {
-       var filterVal = 'blur(' + size + 'px)';
-       $(element)
-           .css('filter', filterVal)
-           .css('webkitFilter', filterVal)
-           .css('mozFilter', filterVal)
-           .css('oFilter', filterVal)
-           .css('msFilter', filterVal)
-           .css('transition', 'all 0.5s ease-out')
-           .css('-webkit-transition', 'all 0.' + blurDuration + 's ease-out')
-           .css('-moz-transition', 'all 0.' + blurDuration + 's ease-out')
-           .css('-o-transition', 'all 0.' + blurDuration + 's ease-out')
-           .css('opacity', fadeValue);
+          var filterVal = 'blur(' + size + 'px)';
+          $(element)
+              .css('filter', filterVal)
+              .css('webkitFilter', filterVal)
+              .css('mozFilter', filterVal)
+              .css('oFilter', filterVal)
+              .css('msFilter', filterVal)
+              .css('transition', 'all 0.5s ease-out')
+              .css('-webkit-transition', 'all 0.' + blurDuration + 's ease-out')
+              .css('-moz-transition', 'all 0.' + blurDuration + 's ease-out')
+              .css('-o-transition', 'all 0.' + blurDuration + 's ease-out')
+              .css('opacity', fadeValue);
       }
 
       function parallax(selector, image_src, width) {
@@ -202,17 +202,6 @@ Template.main.rendered = function() {
           this.resizeTO = setTimeout(function() {
               $(this).trigger('resizeEnd');
           }, 800);
-
-
-<<<<<<< HEAD
-    $(".down").click(function() {
-        var new_top = $(this).parents(".section").children(".content-wrapper").position().top;
-        $('html,body').animate({
-            scrollTop: new_top
-        }, 'slow');
-    })
-=======
-
     }).bind('resizeEnd', function() {
       var windowWidthEnd = $(window).width();
       var deltaWindowWidth = windowWidthEnd - windowWidthStart;
@@ -249,5 +238,4 @@ Template.resizeNotification.rendered = function() {
 
   $('.resizeNotification').hide().css('opacity', 1);
 
->>>>>>> 9f2c66980f51f651c67ad6076f030fc6ab172b48
 }
