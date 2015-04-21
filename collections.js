@@ -32,7 +32,12 @@ Schemas.Events = new SimpleSchema({
 	},
 	date: {
 		type: Date,
-		label: 'Date'
+		label: 'Date',
+    autoValue: function() {
+      if( this.isInsert ) {
+          return new Date()
+      }
+    }
 	}
 });
 Events.attachSchema(Schemas.Events);
@@ -50,7 +55,12 @@ Schemas.BlogPosts = new SimpleSchema({
 	},
 	date: {
 		type: Date,
-		label: 'Date'
+		label: 'Date',
+    autoValue: function() {
+      if( this.isInsert ) {
+          return new Date()
+      }
+    }
 	},
 	picture: {
     type: String,
