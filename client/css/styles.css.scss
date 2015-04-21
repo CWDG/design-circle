@@ -79,7 +79,7 @@ body {
 .section {
   width: 100vw;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   float: left;
 
   .header {
@@ -413,7 +413,7 @@ input#contactFormSubmit {
 		font-size: 25px;
 		@include span-columns(9);
 		@include shift(2);
-		@include centerer;
+		/*@include centerer;*/
 	}
 
 	#fullCalModal {
@@ -468,5 +468,7 @@ input#contactFormSubmit {
 		display: block;
 		float: none;
 		height: 100%;
+		width: auto;
+		overflow-y: scroll;
 	}
 }
