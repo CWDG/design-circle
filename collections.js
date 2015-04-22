@@ -47,7 +47,12 @@ Schemas.Events = new SimpleSchema({
 	},
 	date: {
 		type: Date,
-		label: 'Date'
+		label: 'Date',
+    autoValue: function() {
+      if( this.isInsert ) {
+          return new Date()
+      }
+    }
 	}
 });
 Events.attachSchema(Schemas.Events);
@@ -65,7 +70,12 @@ Schemas.BlogPosts = new SimpleSchema({
 	},
 	date: {
 		type: Date,
-		label: 'Date'
+		label: 'Date',
+    autoValue: function() {
+      if( this.isInsert ) {
+          return new Date()
+      }
+    }
 	},
 	picture: {
     type: String,
@@ -75,7 +85,8 @@ Schemas.BlogPosts = new SimpleSchema({
             collection: 'Images'
 					}
 			},
-      label: 'Choose Image'
+      label: 'Choose Image',
+      optional: true
 	}
 });
 BlogPosts.attachSchema(Schemas.BlogPosts);

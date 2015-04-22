@@ -1,17 +1,28 @@
 <template name="main">
-	{{> navbar}}
+  <section id="penultimate-container">
+    {{> navbar}}
 
-	{{> titlepage}}
+    {{> titlepage}}
 
-	{{> aboutpage}}
+    {{> aboutpage}}
 
-	{{> team_members}}  
+    {{> team_members}}
 
-	{{> club_events}}
+    {{> club_events}}
 
-  {{> blog}}
+    {{> blogPosts}}
 
-	{{> contactform}}
+    {{> contactform}}
 
-	{{> calendar}}
+    {{> calendar}}
+
+    {{> resizeNotification}}
+  </section>
+</template>
+
+<template name='resizeNotification'>
+  <div class='resizeNotification'>
+    <i class="fa fa-search" style="padding-right: 10px; padding-top: 5px;"></i>
+    Finding your place...
+  </div>
 </template>
