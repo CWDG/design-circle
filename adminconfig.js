@@ -7,6 +7,11 @@ AdminConfig = {
 		'fuller.412@osu.edu',
 		'j3rn@j3rn.com'],
 	collections: {
+		About: {
+			tableColumns:[
+				{label: 'Title', name: 'title'},
+				{label: 'Date', name: 'date'}]
+		},
 		Events: {
 			tableColumns: [
 				{label: 'Title', name: 'title'},

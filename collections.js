@@ -17,6 +17,21 @@ Images.allow({
 
 Schemas = {}
 
+About= new Mongo.Collection("about");
+
+Schemas.About = new SimpleSchema({ 
+	title: {
+		type: String,
+		max: 1000
+	},
+	date: {
+		type: Date,
+		label: 'date'
+	}
+});
+
+About.attachSchema(Schemas.About);
+
 Events = new Mongo.Collection("events");
 
 Schemas.Events = new SimpleSchema({
