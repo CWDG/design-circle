@@ -13,3 +13,7 @@ Meteor.publish("Members",function() {
 Meteor.publish('images', function() {
   return Images.find();
 });
+
+Meteor.publish("about",function() {
+	return About.find();
+});
