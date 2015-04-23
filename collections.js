@@ -26,7 +26,12 @@ Schemas.About = new SimpleSchema({
 	},
 	date: {
 		type: Date,
-		label: 'date'
+		label: 'Date',
+		autoValue: function() {
+	         if( this.isInsert ) {
+        	  return new Date()
+      		  }
+    	         }
 	}
 });
 
